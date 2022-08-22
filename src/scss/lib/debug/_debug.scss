@@ -1,0 +1,64 @@
+/*******************************************************************************
+ * DEBUG
+ * Path: lib/debug/_debug.scss
+ ******************************************************************************/
+
+////////////////////////////////////////////////////////////////////////////////
+// CLASSES
+
+/* DEBUG ZONE */
+
+.debug-zone {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    @include h-padding($gutter-quarter);
+    background-color: $debug-zone-background;
+    z-index: $z-index-debug;
+}
+
+.debug-zone__item {
+    padding: $gutter-eighth;
+    color: $debug-zone-text-color;
+
+    &::before {
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+    }
+
+    &::after {
+        font-size: $font-size-small;
+    }
+}
+
+/* DEBUG SCREEN WIDTH */
+.debug-zone__item--screen-width:after {
+    content: "px";
+}
+
+/* DEBUG BREAKPOINTS */
+
+// In case ther is no 'min' breakpoint
+.debug-zone__item--bp:before {
+    content: "min";
+}
+.debug-zone__item--bp:after {
+    content: " (min 0px)";
+}
+
+@each $breakpoint-name, $breakpoint-width in $breakpoints {
+    @media (min-width: $breakpoint-width) {
+        .debug-zone__item--bp::before {
+            content: $breakpoint-name;
+        }
+        .debug-zone__item--bp::after {
+            content: 
+                " (min " + 
+                // bp($breakpoint-name) + " / " + 
+                // em2rem(bp($breakpoint-name)) + " / " +
+                em2px(bp($breakpoint-name)) + 
+                ")";
+        }
+    }
+}

@@ -1,0 +1,237 @@
+/*******************************************************************************
+ * STYLEGUIDE
+ * Path: lib/debug/_styleguide.scss
+ ******************************************************************************/
+
+// Color blocks
+
+.styleguide-color-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -4px;
+    margin-bottom: calc(#{$gutter} - 4px);
+}
+
+.styleguide-color-block {
+    flex-basis: 128px;
+    min-height: 128px;
+    margin: 4px;
+    border: 2px solid $color-gray-darker;
+    font-size: 12px;
+}
+
+.styleguide-color-block__label {
+    padding: 2px 4px;
+    background-color: $color-gray-darker;
+    color: white;
+}
+
+// Material shadows
+
+.styleguide-shadow-block {
+    padding: $gutter;
+    background-color: white;
+}
+
+// Buttons
+
+.styleguide-buttons {
+    .btn {
+        margin-bottom: $gutter-quarter;
+    }
+}
+
+// Icons
+
+.styleguide-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: - $gutter-quarter;
+    margin-bottom: ($gutter - $gutter-quarter);
+
+    > div {
+        display: block;
+        margin: $gutter-quarter;
+        padding: 10px; // 10 + 24 + 10 = 44px
+        transition: all 0.25s;
+        background-color: white;
+        color: $color-gray-darker;
+    }
+
+    &.styleguide-icons--icon-set {
+
+        > div {
+            flex-basis: $gutter * 4;
+            padding: $gutter-half;
+            border: 1px solid $color-gray-lightest;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &:hover { // Not working on a div, WTF
+                border-color: $color-primary;
+                background-color: $color-primary;
+                color: white;
+                @include shadow(2);
+                cursor: pointer;
+            }
+
+            > span {
+                display: block;
+                margin-top: $gutter-half;
+                font-size: $font-size-smaller;
+            }
+        }
+    }
+
+    &.styleguide-icons--dark {
+
+        > div {
+            background-color: $color-gray-darker;
+            color: white;
+        }
+    }
+}
+
+// Toggle JS
+
+.styleguide-toggle-target {
+    padding: $gutter-double;
+    background-color: $color-gray-darker;
+    color: white;
+    transition: all 0.25s;
+
+    &.active {
+        background-color: $color-accent;
+    }
+}
+
+// Tabs
+
+.styleguide-tabs-toggles {
+    
+    .tab-toggle {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &.active {
+            @include btn('default');
+        }
+    }
+}
+
+.styleguide-tabs-contents {
+    margin-bottom: $gutter;
+
+    .tab-content {
+        padding: $gutter;
+        background-color: $color-gray-lightest;
+    }
+}
+
+
+// Image test
+
+.styleguide-image-test {
+    margin-bottom: $gutter;
+}
+
+.styleguide-bg-image-test {
+    margin-bottom: $gutter;
+    max-width: 600px;
+    height: 200px;
+    margin: $gutter auto;
+}
+
+.styleguide-bg-image-test--1 {
+    background-image: url('logo-diatem.png');
+}
+
+.styleguide-bg-image-test--2 {
+    background-image: url('logo-diatem-flipped.jpg');
+}
+
+// STYLEGUIDE TYPOGRAPHY
+
+.page--styleguide {
+
+    // Hash Tag Links Padding
+    // See: https://css-tricks.com/hash-tag-links-padding/
+    
+    h2::before { 
+        $site-header-height: 8.9rem; // Magic value!
+    
+        display: block; 
+        content: " "; 
+        margin-top: -($site-header-height + $gutter-double); 
+        height: ($site-header-height + $gutter-double); 
+        visibility: hidden; 
+        pointer-events: none;
+    }
+    
+    h3.styleguide-h3 {
+        margin-top: $gutter-double;
+    }
+
+    p.styleguide-p-sourcecode {
+        margin-bottom: $gutter-double;
+    }
+}
+
+// STYLEGUIDE DEMO SLIDER
+
+.styleguide-tiny-slider {
+    display: flex;
+
+}
+
+.tiny-slide {
+    min-width: 10rem;
+    min-height: 20rem;
+}
+
+.tiny-slide-1 { background-color: tomato; }
+.tiny-slide-2 { background-color: teal; }
+.tiny-slide-3 { background-color: greenyellow; }
+.tiny-slide-4 { background-color: purple; }
+.tiny-slide-5 { background-color: orange; }
+
+
+////////////////////////////////////////////////////////////////////////////////
+// STYLEGUIDE PAGE LAYOUT
+
+// FOOTER
+
+.footer-made-by {
+    color: $color-gray-light;
+    text-align: center;
+}
+
+.footer-made-by__link {
+    color: $color-gray-light;
+
+    @include hocus() {
+        color: white;
+    }
+}
+
+// SECTIONS
+
+.section--styleguide {
+    @include v-padding($gutter-double);
+
+    &:nth-child(even) {
+        background-color: $color-gray-lightest;
+    }
+}
+
+// CARDS
+
+.styleguide-card {
+    padding: $gutter;
+    background-color: white;
+    @include shadow(1);
+    border-radius: $gutter-eighth;
+}

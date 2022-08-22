@@ -1,0 +1,237 @@
+/*******************************************************************************
+ * TOOLS
+ * Path: lib/base/_tools.scss
+ ******************************************************************************/
+
+@use "sass:math";
+
+// PADDING HELPER
+
+@mixin v-padding($top, $bottom: $top) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+
+@mixin h-padding($left, $right: $left) {
+    padding-left: $left;
+    padding-right: $right;
+}
+
+@if $generate_classes and $generate-tools-padding-classes {
+
+    .no-padding { padding: 0; }
+    .padding { padding: $gutter; }
+    .padding-double { padding: $gutter-double; }
+    .padding-triple { padding: $gutter-triple; }
+    .padding-quad { padding: $gutter-quad; }
+    .padding-half { padding: $gutter-half; }
+    .padding-quarter { padding: $gutter-quarter; }
+    .padding-eighth { padding: $gutter-eighth; }
+
+    .no-v-padding { @include v-padding(0); }
+    .v-padding { @include v-padding($gutter); }
+    .v-padding-double { @include v-padding($gutter-double); }
+    .v-padding-triple { @include v-padding($gutter-triple); }
+    .v-padding-quad { @include v-padding($gutter-quad); }
+    .v-padding-half { @include v-padding($gutter-half); }
+    .v-padding-quarter { @include v-padding($gutter-quarter); }
+    .v-padding-eighth { @include v-padding($gutter-eighth); }
+
+    .no-h-padding { @include h-padding(0); }
+    .h-padding { @include h-padding($gutter); }
+    .h-padding-double { @include h-padding($gutter-double); }
+    .h-padding-triple { @include h-padding($gutter-triple); }
+    .h-padding-quad { @include h-padding($gutter-quad); }
+    .h-padding-half { @include h-padding($gutter-half); }
+    .h-padding-quarter { @include h-padding($gutter-quarter); }
+    .h-padding-eighth { @include h-padding($gutter-eighth); }
+}
+
+// MARGIN HELPER
+
+@mixin v-margin($top, $bottom: $top) {
+    margin-top: $top;
+    margin-bottom: $bottom;
+}
+
+@mixin h-margin($left, $right: $left) {
+    margin-left: $left;
+    margin-right: $right;
+}
+
+@if $generate_classes and $generate-tools-margin-classes {
+
+    .no-margin { margin: 0; }
+    .margin { margin: $gutter; }
+    .margin-double { margin: $gutter-double; }
+    .margin-triple { margin: $gutter-triple; }
+    .margin-quad { margin: $gutter-quad; }
+    .margin-half { margin: $gutter-half; }
+    .margin-quarter { margin: $gutter-quarter; }
+    .margin-eighth { margin: $gutter-eighth; }
+
+    .no-v-margin { @include v-margin(0); }
+    .v-margin { @include v-margin($gutter); }
+    .v-margin-double { @include v-margin($gutter-double); }
+    .v-margin-triple { @include v-margin($gutter-triple); }
+    .v-margin-quad { @include v-margin($gutter-quad); }
+    .v-margin-half { @include v-margin($gutter-half); }
+    .v-margin-quarter { @include v-margin($gutter-quarter); }
+    .v-margin-eighth { @include v-margin($gutter-eighth); }
+
+    .no-h-margin { @include h-margin(0); }
+    .h-margin { @include h-margin($gutter); }
+    .h-margin-double { @include h-margin($gutter-double); }
+    .h-margin-triple { @include h-margin($gutter-triple); }
+    .h-margin-quad { @include h-margin($gutter-quad); }
+    .h-margin-half { @include h-margin($gutter-half); }
+    .h-margin-quarter { @include h-margin($gutter-quarter); }
+    .h-margin-eighth { @include h-margin($gutter-eighth); }
+
+    .no-margin-bottom { margin-bottom: 0; }
+    .margin-bottom { margin-bottom: $gutter; }
+    .margin-bottom-half { margin-bottom: $gutter-half; }
+    .margin-bottom-double { margin-bottom: $gutter-double; }
+    .margin-bottom-quarter { margin-bottom: $gutter-quarter; }
+
+    .margin-auto {
+        @include h-margin(auto);
+    }
+}
+
+// SIZE HELPER
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// HOVER / FOCUS MIXIN
+
+@mixin hocus() {
+    outline: $input-focus-outline-width solid transparent;
+    outline-offset: $input-focus-outline-offset;
+
+    &:hover {
+        @content;
+    }
+
+    &:focus-visible {
+        outline-color: $input-focus-color;
+        z-index: +1;
+    }
+}
+
+// TEXT SIZE HELPERS
+
+@if $generate_classes and $generate-tools-text-classes {
+
+    .font-size-smaller { font-size: $font-size-smaller; }
+    .font-size-small { font-size: $font-size-small; }
+    .font-size-big { font-size: $font-size-big; }
+    .font-size-bigger { font-size: $font-size-bigger; }
+    .font-size-biggest { font-size: $font-size-biggest; }
+
+    // TEXT ALIGNEMENT HELPERS
+
+    .text-align-center { text-align: center !important; }
+    .text-align-left { text-align: left !important; }
+    .text-align-right { text-align: right !important; }
+}
+
+// FLEX HELPERS
+
+.flex-push-right { margin-left: auto; }
+.flex-push-left { margin-right: auto; }
+.flex-grow { flex-grow: 1; }
+
+// OVERFLOW
+
+.overflow-hidden { overflow: hidden; }
+
+// CSS TRIANGLES
+
+@mixin triangle($orientation, $color, $width, $height: $width * 0.5) {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+
+    @if $orientation == "left" {
+        border-width: $width * 0.5 $height $width * 0.5 0;
+        border-color: transparent $color transparent transparent;
+    } @else if $orientation == "right" {
+        border-width: $width * 0.5 0 $width * 0.5 $height;
+        border-color: transparent transparent transparent $color;
+    } @else if $orientation == "top" {
+        border-width: 0 $width * 0.5 $height $width * 0.5;
+        border-color: transparent transparent $color transparent;
+    } @else if $orientation == "bottom" {
+        border-width: $height $width * 0.5 0 $width * 0.5;
+        border-color: $color transparent transparent transparent;
+    } @else if $orientation == "top-left" {
+        border-width: $height * 2 $width 0 0;
+        border-color: $color transparent transparent transparent;
+    } @else if $orientation == "top-right" {
+        border-width: 0 $width $height * 2 0;
+        border-color: transparent $color transparent transparent;
+    } @else if $orientation == "bottom-left" {
+        border-width: $height * 2 0 0 $width;
+        border-color: transparent transparent transparent $color;
+    } @else if $orientation == "bottom-right" {
+        border-width: 0 0 $height * 2 $width;
+        border-color: transparent transparent $color transparent;
+    } @else {
+        @error '@mixin triangle(): unknown $orientation `#{$orientation}`';
+    }
+}
+
+// BACKGROUND HELPERS
+
+@mixin bg-cover() {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-cover {
+    @include bg-cover();
+}
+
+@mixin absolute-full() {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@mixin absolute-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// MISC
+
+// Visible only for Screen readers
+
+@mixin sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important; // Fix for https://github.com/twbs/bootstrap/issues/25686
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.sr-only {
+    @include sr-only();
+}

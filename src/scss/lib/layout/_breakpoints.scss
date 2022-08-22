@@ -1,0 +1,91 @@
+/*******************************************************************************
+ * BREAKPOINTS
+ * Path: lib/layout/_breakpoints.scss
+ ******************************************************************************/
+
+////////////////////////////////////////////////////////////////////////////////
+// FUNCTIONS
+
+// BP
+// Returns a breakpoint size
+@function bp($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @return map-get($breakpoints, $breakpoint);
+    } @else {
+        @error 'ERROR in function bp(): unknown breakpoint #{$breakpoint}';
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// MIXINS
+
+// BP
+@mixin bp($point: 'sm', $max-width: false) {
+    @if map-has-key($breakpoints, $point) {
+        @if $max-width {
+            @media (max-width: bp($point)) {
+                @content;
+            }
+        } @else {
+            @media (min-width: bp($point)) {
+                @content;
+            }
+        }
+    } @else {
+        @warn 'ERROR in mixin bp(): unknown breakpoint #{$point}';
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// CLASSES
+
+@if $generate_classes and $generate-breakpoints-classes {
+
+    // VISIBILITY HELPERS
+    
+    @each $breakpoint-name, $breakpoint-width in $breakpoints {
+        .visible-#{$breakpoint-name} {
+            @include bp($breakpoint-name) {
+                display: initial;
+            }
+        }
+    
+        .hidden-#{$breakpoint-name} {
+            @include bp($breakpoint-name) {
+                display: none;
+            }
+        }
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .visible {
+        display: initial;
+    }
+    
+    .visible-collapsed {
+        @include bp($bp-expanded, true) {
+            display: initial;
+        }
+    }
+    
+    .hidden-collapsed {
+        @include bp($bp-expanded, true) {
+            display: none;
+        }
+    }
+    
+    .visible-expanded {
+        @include bp($bp-expanded) {
+            display: initial;
+        }
+    }
+    
+    .hidden-expanded {
+        @include bp($bp-expanded) {
+            display: none;
+        }
+    }
+}

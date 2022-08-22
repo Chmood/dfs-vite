@@ -1,0 +1,481 @@
+/*******************************************************************************
+ * FORMS
+ * Path: lib/components/_forms.scss
+ ******************************************************************************/
+
+input,
+textarea,
+select,
+input[type="checkbox"] + label::before,
+input[type="radio"] + label::before {
+    transition: all 0.25s;
+}
+ 
+// HOVER AND FOCUS
+
+input,
+textarea,
+select {
+    @include hocus {
+        border-color: $input-border-focus !important;
+    }
+}
+
+input[type="checkbox"] + label::before,
+input[type="radio"] + label::before {
+    outline: $input-focus-outline-width solid transparent;
+    outline-offset: $input-focus-outline-offset;
+}
+
+input[type="checkbox"]:focus-visible + label::before,
+input[type="radio"]:focus-visible + label::before {
+    outline-color: $input-focus-color;
+}
+
+// button:focus {
+//     outline: none;
+// }
+
+// BASE INPUTS
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], input[type="tel"], input[type="url"], input[type="date"], input[type="time"], input[type="search"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    background-color: $input-bg;
+    color: $input-color;
+    
+    .input-block--success & {
+        border-color: $color-success;
+
+        &:hover {
+            border-color: darken($color-success, 20%) !important;
+        }
+    }
+    
+    .input-block--error & {
+        border-color: $color-error;
+
+        &:hover {
+            border-color: darken($color-error, 20%) !important;
+        }
+    }
+}
+
+// Same height inputs
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], input[type="tel"], input[type="url"], input[type="date"], input[type="time"], input[type="search"],
+select,
+option,
+.input-before/*:not(.btn):not(a)*/,
+.input-after/*:not(.btn):not(a)*/ {
+    padding: 1.2rem; // Unified padding, like buttons
+    height: $input-height-base; // Uniformize height. Must match the button / icon height
+    // line-height: 1.4; // Magic value - optical fine-tuning
+}
+
+// Border
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], input[type="tel"], input[type="url"], input[type="date"], input[type="time"], input[type="search"],
+select,
+textarea {
+
+    border: none;
+    border-color: $input-border-color;
+    border-style: solid;
+    border-width: 0;
+
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+
+    &:first-child {
+        border-left-width: 1px;
+    }
+
+    &:last-child {
+        border-right-width: 1px;
+    }
+}
+
+// Border radius
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], input[type="tel"], input[type="url"], input[type="date"], input[type="time"], input[type="search"],
+select,
+textarea,
+.input-before/*:not(.btn):not(a)*/,
+.input-after/*:not(.btn):not(a)*/ {
+    border-radius: 0;
+
+    &:first-child {
+        border-top-left-radius: $input-border-radius;
+        border-bottom-left-radius: $input-border-radius;
+    }
+
+    &:last-child {
+        border-top-right-radius: $input-border-radius;
+        border-bottom-right-radius: $input-border-radius;
+    }
+}
+
+// Specific inputs
+
+input[type="number"] {
+    text-align: right;
+}
+
+textarea {
+    padding: 1.2rem; // Unified padding, like buttons
+    line-height: $line-height-base;
+    resize: vertical;
+}
+
+select {
+    background-color: $input-bg;
+    @include v-padding(0.8rem); // Smaller padding, avoid cropping
+
+    &[multiple] {
+        height: auto;
+        @include h-padding(0);
+    }
+}
+
+// Label
+
+label,
+.label {
+    display: block;
+    margin-bottom: $gutter-quarter;
+    line-height: $line-height-small; // Compact for multiline
+    user-select: none; // Prevents label text selection on click
+
+    .input-block > & {
+        font-weight: $font-weight-semibold;
+    }
+
+    .input-block.input-block--error > & {
+        color: $color-error;
+    }
+
+    .input-block.input-block--required > & {
+        &::after {
+            display: inline-block;
+            margin-left: $gutter-eighth * 0.5;
+            content: "*";
+            color: $color-error;
+            transform: translateY(-$gutter-eighth);
+        }
+    }
+}
+
+// Fieldset and legend
+/* From http://thatemil.com/blog/2015/01/03/reset-your-fieldset/ by Emil Björklund */
+
+legend {
+    display: table;
+    padding: 0;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    min-width: 0;
+    padding: 0.01em 0 0 0;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+    display: table-cell;
+}
+
+fieldset {
+    border: 1px solid $color-gray-lightest;
+}
+
+legend {
+    @include h(4);
+    margin-bottom: 0;
+}
+
+// Placeholder
+// See: https://css-tricks.com/almanac/selectors/p/placeholder/
+
+@mixin placeholder() {
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        @content;
+    }
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        @content;
+    }
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        @content;
+    }
+    :-moz-placeholder {
+        /* Firefox 18- */
+        @content;
+    }
+}
+
+@include placeholder() {
+    font-style: italic;
+}
+
+// Submit
+
+input[type='submit']/*,
+button[type='submit']*/ {
+    @include btn();
+    @include btn("primary");
+}
+
+// LAYOUT
+
+// Form layout
+
+.form {
+    align-items: flex-start; // Better when unknown content
+    // align-items: flex-end; // Better when multiline label AND same height inputs
+
+}
+
+@mixin form-inline($bp: 'sm') {
+
+    > .input-block {
+        &:not(:last-child) {
+            margin-bottom: $gutter-half;
+        }
+    }
+
+    @include bp($bp) {
+        display: flex;
+        align-items: flex-end;
+    
+        > .input-block {
+            &:not(:last-child) {
+                margin-bottom: 0;
+                margin-right: $input-width-gutter-block-inline;
+            }
+    
+            &.input-block--inline {
+    
+                label,
+                .label,
+                .input {
+                    flex-basis: auto;
+                }
+            }
+        }
+    
+        > .btn {
+            &:not(:last-child) {
+                margin-right: $input-width-gutter-btn-inline;
+            }
+        }
+    }
+}
+
+// Loop on breakpoints
+@each $breakpoint-name, $breakpoint-width in $breakpoints {
+
+    .form--inline-#{$breakpoint-name} {
+        @include form-inline($breakpoint-name);
+    }
+}
+
+// Block layout
+
+.input-block {
+    @include row();
+    @include row("no-gutter");
+
+    > input[type="submit"],
+    > button[type="submit"] {
+        flex-basis: auto;
+    }
+
+    &.input-block--inline {
+
+        @include bp('sm') { // Not on mobile
+            // flex-wrap: nowrap; // Breaks input info text
+
+            > label,
+            > .label {
+                flex-basis: calc(50% - #{$input-width-gutter-label-inline});
+                margin-right: $input-width-gutter-label-inline;
+                align-self: center;
+                margin-bottom: 0;
+            }
+    
+            > .input {
+                flex-basis: 50%;
+                align-self: center;
+            }
+        }
+    }
+
+    &.input-block--error {}
+    &.input-block--success {}
+    &.input-block--required {}
+    &.input-block--disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        input {
+            cursor: not-allowed;
+        }
+    }
+}
+
+// Input wrapper (required?)
+
+.input {
+    &.input--inline {
+        display: flex;
+    }
+}
+
+// Radio buttons and checkboxes
+
+.checkbox,
+.radio {
+    position: relative;
+    margin-bottom: $gutter-eighth;
+
+    // Block radiobox
+    display: flex;
+    align-items: flex-start;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-right: $input-width-gutter-label-radiobox;
+
+        // Visually hide
+        position: absolute;
+        opacity: 0;
+        width: $input-size-radiobox;
+        height: $input-size-radiobox;
+        top: (($input-height-base - $input-size-radiobox) * 0.5);
+        left: 0;
+    }
+
+    label,
+    .label {
+        margin-bottom: 0;
+        position: relative;
+        padding: 1.0rem 0;
+        padding-left: ($input-size-radiobox + $input-width-gutter-label-radiobox);
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            transform-origin: 50% 50%;
+            transition: all 0.25s;
+        }
+        
+        // Outer
+        &::before {
+            width: $input-size-radiobox;
+            height: $input-size-radiobox;
+            top: (($input-height-base - $input-size-radiobox) * 0.5);
+            left: 0;
+            border: 1px solid $input-border-color;
+        }
+        
+        // Inner
+        &::after {
+            width: $input-size-radiobox-inner;
+            height: $input-size-radiobox-inner;
+            top: (($input-height-base - $input-size-radiobox-inner) * 0.5);
+            left: (($input-size-radiobox - $input-size-radiobox-inner) * 0.5);
+            background-color: $input-color-radiobox-inner;
+            transform: scale(0);
+        }
+
+        &:hover {
+            &::before {
+                border-color: $input-border-focus;
+            }
+        }
+
+    }
+
+    input:checked {
+        & + label,
+        & + .label {
+
+            // Inner
+            &::after {
+                transform: scale(1);
+            }
+        }
+    }
+
+    // Inline radiobox
+    .input--inline & {
+        align-items: center;
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+            margin-right: $input-width-gutter-label-inline;
+        }
+    }
+}
+
+.radio {
+
+    label,
+    .label {
+
+        &::before,
+        &::after {
+            border-radius: 50%;
+        }
+    }
+}
+
+// Input prefix and suffix
+
+.input-before,
+.input-after {
+    flex-shrink: 0;
+
+    &:not(.btn):not(a) {
+        white-space: nowrap;
+        background-color: $input-border-color;
+        display: flex;
+        align-items: center;
+    }
+}
+
+// Input text infos / errors
+
+.input-text {
+    @include v-padding($gutter-eighth);
+    text-align: right;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    font-style: italic;
+
+    &.input-text--info { color: $color-gray; }
+    &.input-text--error { color: $color-error; }
+    &.input-text--success { color: $color-success; }
+}
+
+// MESSAGES
+// TODO: move this into dedicated file!
+
+.alert {
+    display: block;
+    padding: $gutter-quarter $gutter-half;
+    font-style: italic;
+
+    &.alert--error {
+        background-color: $color-error;
+        color: white;
+    }
+
+    .form & {
+        margin-bottom: $gutter;
+    }
+}

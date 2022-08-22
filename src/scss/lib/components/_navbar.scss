@@ -1,0 +1,70 @@
+/*******************************************************************************
+ * NAVBAR
+ * Path: lib/components/_navbar.scss
+ ******************************************************************************/
+
+////////////////////////////////////////////////////////////////////////////////
+// CLASSES
+
+@if $generate_classes and $generate-navbars-classes {
+
+    // NAVBAR
+
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-header {}
+
+    .navbar-body {
+        // Push the menu to the right
+        margin-left: auto;
+    }
+
+    .navbar-footer {}
+
+
+    // NAVBAR LOGO
+
+    .navbar-logo {
+        display: block;
+        margin-right: $gutter;
+    }
+
+    // NAVBAR MENU
+
+    .navbar-menu {}
+
+    .navbar-menu--mobile {}
+
+    .navbar-menu--desktop {
+        
+        // Mobile main menu
+        @include bp($bp-expanded-menu, true) {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80vw;
+            max-width: 40rem;
+            height: 100vh;
+            padding: $gutter-half;
+            background-color: $header-bg-color;
+            z-index: $z-index-panel;
+            @include shadow(3);
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.25s;
+
+            /*body*/.has-panel-menu & {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @include bp($bp-expanded-menu) {
+            display: block;
+            margin-right: $gutter-quarter;
+        }
+    }
+}

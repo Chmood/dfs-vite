@@ -1,0 +1,67 @@
+/*******************************************************************************
+ * ICONS
+ * Path: lib/components/_icons.scss
+ ******************************************************************************/
+
+@use "sass:math";
+
+////////////////////////////////////////////////////////////////////////////////
+// MIXINS
+
+// OUTER SVG
+
+@mixin icon() {
+    display: block;
+
+    p & {
+        display: inline;
+    }
+    
+    @each $key, $size in $icon-sizes {
+    
+        $key-formatted: "";
+        @if $key == "md" {
+            $key-formatted: "";
+        } @else {
+            $key-formatted: ".icon-#{$key}";
+        }
+    
+        &#{$key-formatted} {
+    
+            // Allows size override with attributes in html
+            &:not([width]) { width: $size; }
+            &:not([height]) { height: $size; }
+    
+            &.icon--inline {
+                // Hacky baseline alignment
+                position: relative;
+                top: math.div($size, 6); // Magic value...
+            }
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// CLASSES
+
+@if $generate_classes and $generate-icons-classes {
+
+    // OUTER SVG
+
+    /*svg*/.icon {
+        @include icon();
+    }
+
+    // INNER <USE>
+    // Warning: class won't work here, use ID instead!
+
+    /*use*/[id^="icon-"],
+    /*use*/[id*="--no-color"],
+    /*use*/.svg-inherit-color {
+        
+        // Inherit color
+        path {
+            fill: currentColor; // Only works filled path and no strokes at all
+        }
+    }
+}

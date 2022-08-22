@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>DFS - Styleguide</title>
+  <meta name="description" content="Diatem Front-end Skeleton">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+
+<body class="page page--styleguide has-sticky-header">
+  
+  <div class="site-wrapper" aria-hidden="false">
+
+    <!-- SITE HEADER -->
+
+    <header class="site-header">
+
+      <!-- PRE-HEADER -->
+
+      <!-- <section class="section section--pre-header">
+                <div class="container">
+                    <div>This is the pre-header section</div>
+                </div>
+            </section> -->
+
+      <!-- HEADER -->
+
+      <section class="section section--header">
+        <div class="container">
+
+          <nav class="navbar" role="navigation">
+
+            <!-- LOGO -->
+
+            <div class="navbar-header">
+              <a class="navbar-logo" href="/" rel="home">
+                <svg class="logo logo--mobile" viewBox="0 0 48 48">
+                  <use xlink:href="#logo-mobile"></use>
+                </svg>
+                <svg class="logo logo--tablet" viewBox="0 0 150 48">
+                  <use xlink:href="#logo-tablet"></use>
+                </svg>
+                <svg class="logo logo--desktop" viewBox="0 0 200 76">
+                  <use xlink:href="#logo-desktop"></use>
+                </svg>
+              </a>
+            </div>
+
+            <!-- MAIN MENU -->
+
+            <div class="navbar-body">
+              <nav class="navbar-menu navbar-menu--desktop">
+                <ul class="menu">
+
+                  <!-- Mobile menu close button -->
+                  <li class="menu-item menu-item--panel-menu-close">
+                    <button class="menu-item-link btn btn-white btn-round btn-bg-grow" data-toggle="body"
+                      data-toggle-classname="has-panel-menu">
+                      <span class="sr-only">Close menu</span>
+                      <span>MENU</span>
+                      &nbsp;
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-close"></use>
+                      </svg>
+                    </button>
+                  </li>
+
+                  <li class="menu-item">
+                    <a href="#colors" class="menu-item-link">
+                      <span>Colors</span>
+                    </a>
+                  </li>
+
+                  <li class="menu-item">
+                    <a href="#type" class="menu-item-link">
+                      <span>Typography</span>
+                    </a>
+                  </li>
+
+                  <li class="menu-item">
+                    <a href="#forms" class="menu-item-link">
+                      <span>Forms</span>
+                    </a>
+                  </li>
+
+                  <li class="menu-item">
+                    <a href="#icons" class="menu-item-link">
+                      <span>Icons</span>
+                    </a>
+                  </li>
+
+                  <li class="menu-item">
+                    <a href="#buttons" class="menu-item-link">
+                      <span>Buttons</span>
+                    </a>
+                  </li>
+
+                  <!-- <li class="menu-item menu-item--dropdown">
+                    <a href="#" class="menu-item-link">
+                        <span>Item</span>
+                    </a>
+                    <span class="menu-item-link dropdown-toggle" data-dropdown>
+                        <span class="caret"></span>
+                    </span>
+                    <div class="dropdown-wrapper">
+                        <ul class="dropdown-menu">
+                            <li class="menu-item">
+                                <a href="#" class="menu-item-link">
+                                    <span>Sub-item</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-item-link">
+                                    <span>Sub-item</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                  </li> -->
+
+                </ul>
+              </nav>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="navbar-footer">
+              <nav class="navbar-menu navbar-menu--mobile">
+                <ul class="menu">
+
+                  <li class="menu-item">
+                    <button class="menu-item-link btn btn-white btn-round btn-bg-grow">
+                      <span class="sr-only">My cart</span>
+                      <svg class="icon icon-lg" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-cart"></use>
+                      </svg>
+                      <!-- <span class="icon-label">13</span> -->
+                    </button>
+                  </li>
+
+                  <!-- Mobile menu open button -->
+                  <li class="menu-item menu-item--panel-menu-open">
+                    <button class="menu-item-link btn btn-white btn-round btn-bg-grow" data-toggle="body"
+                      data-toggle-classname="has-panel-menu">
+                      <span>MENU</span>
+                      &nbsp;
+                      <svg class="icon icon-lg" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-menu"></use>
+                      </svg>
+                    </button>
+                  </li>
+
+                </ul>
+              </nav>
+
+              <!-- {% include 'header/menu-buttons.twig' %} -->
+
+            </div>
+          </nav>
+
+        </div><!-- End .container -->
+      </section>
+
+      <!-- POST-HEADER -->
+
+      <!-- <section class="section section--post-header">
+                <div class="container">
+                    <div>This is the post-header section</div>
+                </div>
+            </section> -->
+
+    </header>
+
+    <!-- SITE BODY -->
+
+    <main class="site-body">
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h1>Diatem Front-end Skeleton - Styleguide</h1>
+          <blockquote>
+            <p>If you start me up, I'll never stop.</p>
+            <cite>– Mick Jagger</cite>
+          </blockquote>
+
+        </div>
+      </section>
+
+      <section class="section section--styleguide">
+      </section>
+
+      <!-- COLORS -->
+
+      <section class="section section--styleguide" id="colors">
+        <div class="container">
+
+          <h2>Colors</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/base/_colors.scss</code></em></p>
+
+          <h3 class="styleguide-h3">Primary colors</h3>
+          <div class="styleguide-color-blocks">
+            <div class="styleguide-color-block bg-primary-lightest">
+              <div class="styleguide-color-block__label">$color-primary-lightest</div>
+            </div>
+            <div class="styleguide-color-block bg-primary-lighter">
+              <div class="styleguide-color-block__label">$color-primary-lighter</div>
+            </div>
+            <div class="styleguide-color-block bg-primary-light">
+              <div class="styleguide-color-block__label">$color-primary-light</div>
+            </div>
+            <div class="styleguide-color-block bg-primary-lighty">
+              <div class="styleguide-color-block__label">$color-primary-lighty</div>
+            </div>
+            <div class="styleguide-color-block bg-primary">
+              <div class="styleguide-color-block__label">$color-primary</div>
+            </div>
+            <div class="styleguide-color-block bg-primary-darky">
+              <div class="styleguide-color-block__label">$color-primary-darky</div>
+            </div>
+            <div class="styleguide-color-block bg-primary-dark">
+              <div class="styleguide-color-block__label">$color-primary-dark</div>
+            </div>
+            <div class="styleguide-color-block bg-primary-darker">
+              <div class="styleguide-color-block__label">$color-primary-darker</div>
+            </div>
+            <div class="styleguide-color-block bg-primary-darkest">
+              <div class="styleguide-color-block__label">$color-primary-darkest</div>
+            </div>
+          </div>
+          <h3 class="styleguide-h3">Secondary colors</h3>
+          <div class="styleguide-color-blocks">
+            <div class="styleguide-color-block bg-secondary-lightest">
+              <div class="styleguide-color-block__label">$color-secondary-lightest</div>
+            </div>
+            <div class="styleguide-color-block bg-secondary-lighter">
+              <div class="styleguide-color-block__label">$color-secondary-lighter</div>
+            </div>
+            <div class="styleguide-color-block bg-secondary-light">
+              <div class="styleguide-color-block__label">$color-secondary-light</div>
+            </div>
+            <div class="styleguide-color-block bg-secondary-lighty">
+              <div class="styleguide-color-block__label">$color-secondary-lighty</div>
+            </div>
+            <div class="styleguide-color-block bg-secondary">
+              <div class="styleguide-color-block__label">$color-secondary</div>
+            </div>
+            <div class="styleguide-color-block bg-secondary-darky">
+              <div class="styleguide-color-block__label">$color-secondary-darky</div>
+            </div>
+            <div class="styleguide-color-block bg-secondary-dark">
+              <div class="styleguide-color-block__label">$color-secondary-dark</div>
+            </div>
+            <div class="styleguide-color-block bg-secondary-darker">
+              <div class="styleguide-color-block__label">$color-secondary-darker</div>
+            </div>
+            <div class="styleguide-color-block bg-secondary-darkest">
+              <div class="styleguide-color-block__label">$color-secondary-darkest</div>
+            </div>
+          </div>
+          <h3 class="styleguide-h3">Accent colors</h3>
+          <div class="styleguide-color-blocks">
+            <div class="styleguide-color-block bg-accent-lightest">
+              <div class="styleguide-color-block__label">$color-accent-lightest</div>
+            </div>
+            <div class="styleguide-color-block bg-accent-lighter">
+              <div class="styleguide-color-block__label">$color-accent-lighter</div>
+            </div>
+            <div class="styleguide-color-block bg-accent-light">
+              <div class="styleguide-color-block__label">$color-accent-light</div>
+            </div>
+            <div class="styleguide-color-block bg-accent-lighty">
+              <div class="styleguide-color-block__label">$color-accent-lighty</div>
+            </div>
+            <div class="styleguide-color-block bg-accent">
+              <div class="styleguide-color-block__label">$color-accent</div>
+            </div>
+            <div class="styleguide-color-block bg-accent-darky">
+              <div class="styleguide-color-block__label">$color-accent-darky</div>
+            </div>
+            <div class="styleguide-color-block bg-accent-dark">
+              <div class="styleguide-color-block__label">$color-accent-dark</div>
+            </div>
+            <div class="styleguide-color-block bg-accent-darker">
+              <div class="styleguide-color-block__label">$color-accent-darker</div>
+            </div>
+            <div class="styleguide-color-block bg-accent-darkest">
+              <div class="styleguide-color-block__label">$color-accent-darkest</div>
+            </div>
+          </div>
+          <h3 class="styleguide-h3">Gray colors</h3>
+          <div class="styleguide-color-blocks">
+            <div class="styleguide-color-block bg-gray-lightest">
+              <div class="styleguide-color-block__label">$color-gray-lightest</div>
+            </div>
+            <div class="styleguide-color-block bg-gray-lighter">
+              <div class="styleguide-color-block__label">$color-gray-lighter</div>
+            </div>
+            <div class="styleguide-color-block bg-gray-light">
+              <div class="styleguide-color-block__label">$color-gray-light</div>
+            </div>
+            <div class="styleguide-color-block bg-gray-lighty">
+              <div class="styleguide-color-block__label">$color-gray-lighty</div>
+            </div>
+            <div class="styleguide-color-block bg-gray">
+              <div class="styleguide-color-block__label">$color-gray</div>
+            </div>
+            <div class="styleguide-color-block bg-gray-darky">
+              <div class="styleguide-color-block__label">$color-gray-darky</div>
+            </div>
+            <div class="styleguide-color-block bg-gray-dark">
+              <div class="styleguide-color-block__label">$color-gray-dark</div>
+            </div>
+            <div class="styleguide-color-block bg-gray-darker">
+              <div class="styleguide-color-block__label">$color-gray-darker</div>
+            </div>
+            <div class="styleguide-color-block bg-gray-darkest">
+              <div class="styleguide-color-block__label">$color-gray-darkest</div>
+            </div>
+          </div>
+          <h3 class="styleguide-h3">Universal colors</h3>
+          <div class="styleguide-color-blocks">
+            <div class="styleguide-color-block bg-error">
+              <div class="styleguide-color-block__label">$color-error</div>
+            </div>
+            <div class="styleguide-color-block bg-warning">
+              <div class="styleguide-color-block__label">$color-warning</div>
+            </div>
+            <div class="styleguide-color-block bg-info">
+              <div class="styleguide-color-block__label">$color-info</div>
+            </div>
+            <div class="styleguide-color-block bg-success">
+              <div class="styleguide-color-block__label">$color-success</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TYPOGRAPHY -->
+
+      <section class="section section--styleguide" id="type">
+        <div class="container">
+
+          <h2>Typography</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/base/_type.scss</code></em></p>
+
+          <h3 class="styleguide-h3">Headings</h3>
+
+          <!-- <h1>Heading 1</h1> -->
+          <h1>Heading 1<br>on two lines</h1>
+          <!-- <h2>Heading 2</h2> -->
+          <h2>Heading 2<br>on two lines</h2>
+          <!-- <h3>Heading 3</h3> -->
+          <h3>Heading 3<br>on two lines</h3>
+          <!-- <h4>Heading 4</h4> -->
+          <h4>Heading 4<br>on two lines</h4>
+          <!-- <h5>Heading 5</h5> -->
+          <h5>Heading 5<br>on two lines</h5>
+          <!-- <h6>Heading 6</h6> -->
+          <h6>Heading 6<br>on two lines</h6>
+
+          <h3 class="styleguide-h3">Body text</h3>
+
+          <h4>Biggest p</h4>
+
+          <p class="font-size-biggest">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci a natus ex dolores, itaque
+            voluptas quo! Nesciunt, aspernatur. A provident error, molestias dolore quos facilis, doloribus
+            eaque tempora voluptas, voluptatem animi commodi.
+          </p>
+
+          <h4>Bigger p</h4>
+
+          <p class="font-size-bigger">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci a natus ex dolores, itaque
+            voluptas quo! Nesciunt, aspernatur. A provident error, molestias dolore quos facilis, doloribus
+            eaque tempora voluptas, voluptatem animi commodi libero dicta qui enim laborum accusamus! Aliquid
+            eligendi, fugit optio dolorum nesciunt ut exercitationem molestias praesentium voluptate.
+          </p>
+
+          <h4>Big p</h4>
+
+          <p class="font-size-big">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci a natus ex dolores, itaque
+            voluptas quo! Nesciunt, aspernatur. A provident error, molestias dolore quos facilis, doloribus
+            eaque tempora voluptas, voluptatem animi commodi libero dicta qui enim laborum accusamus! Aliquid
+            eligendi, fugit optio dolorum nesciunt ut exercitationem molestias praesentium voluptate. Magni at,
+            provident culpa minima ex porro ipsum ut dignissimos nam commodi quis qui dolorum saepe perferendis
+            beatae alias facere assumenda voluptatem eum suscipit architecto! Ea.
+          </p>
+
+          <h4>Default p</h4>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci a natus ex dolores, itaque
+            voluptas quo! Nesciunt, aspernatur. A provident error, molestias dolore quos facilis, doloribus
+            eaque tempora voluptas, voluptatem animi commodi libero dicta qui enim laborum accusamus!
+          </p>
+          <p>
+            Aliquid eligendi, fugit optio dolorum nesciunt ut exercitationem molestias praesentium voluptate.
+            Magni at, provident culpa minima ex porro ipsum ut dignissimos nam commodi quis qui dolorum saepe
+            perferendis beatae alias facere assumenda voluptatem eum suscipit architecto! Ea.
+          </p>
+
+          <h4>Small p</h4>
+
+          <p class="font-size-small">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci a natus ex dolores, itaque
+            voluptas quo! Nesciunt, aspernatur. A provident error, molestias dolore quos facilis, doloribus
+            eaque tempora voluptas, voluptatem animi commodi libero dicta qui enim laborum accusamus! Aliquid
+            eligendi, fugit optio dolorum nesciunt ut exercitationem molestias praesentium voluptate. Magni at,
+            provident culpa minima ex porro ipsum ut dignissimos nam commodi quis qui dolorum saepe perferendis
+            beatae alias facere assumenda voluptatem eum suscipit architecto! Ea.
+          </p>
+
+          <h4>Smaller p</h4>
+
+          <p class="font-size-smaller">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci a natus ex dolores, itaque
+            voluptas quo! Nesciunt, aspernatur. A provident error, molestias dolore quos facilis, doloribus
+            eaque tempora voluptas, voluptatem animi commodi libero dicta qui enim laborum accusamus! Aliquid
+            eligendi, fugit optio dolorum nesciunt ut exercitationem molestias praesentium voluptate. Magni at,
+            provident culpa minima ex porro ipsum ut dignissimos nam commodi quis qui dolorum saepe perferendis
+            beatae alias facere assumenda voluptatem eum suscipit architecto! Ea.
+          </p>
+
+          <h3 class="styleguide-h3">Links</h3>
+
+          <p><a href="#">This is a link</a></p>
+
+          <p>Lorem ipsum dolor sit amet consectetur <a href="#">inline link</a>. Veniam placeat consectetur
+            eius, natus animi itaque rerum, adoloremque magnam totam, <a href="#">adipisci corrupti quaerat</a>.
+            Animi libero harum repudiandae maxime nihil reprehenderit. Beatae?</p>
+
+          <p><a href="#">Multiline link - Lorem ipsum dolor sit amet consectetur. Veniam placeat consectetur eius, natus animi itaque rerum, adoloremque magnam totam, adipisci corrupti quaerat. Animi libero harum repudiandae maxime nihil reprehenderit. Beatae?</a></p>
+  
+            <p><a href="#" class="btn btn-default">Link as a button</a></p>
+
+          <h3 class="styleguide-h3">Lists</h3>
+
+          <h4>Unordered list</h4>
+
+          <ul>
+            <li>Item #1</li>
+            <li>Item #2</li>
+            <li>Item #3</li>
+            <li>Item #4</li>
+          </ul>
+
+          <h4>Ordered list</h4>
+
+          <ol>
+            <li>Item #1</li>
+            <li>Item #2</li>
+            <li>Item #3</li>
+            <li>Item #4</li>
+          </ol>
+
+          <h3 class="styleguide-h3">Horizontal rule</h3>
+
+          <hr>
+
+          <h3 class="styleguide-h3">Quotes</h3>
+
+          <blockquote>
+            <p>I do not fear computers. I fear the lack of them.</p>
+            <cite>– Isaac Asimov</cite>
+          </blockquote>
+
+          <blockquote>
+            <p>But I don't want comfort. I want God, I want poetry, I want real danger, I want freedom, I want
+              goodness. I want sin.</p>
+            <cite>– Aldous Huxley, Brave New World</cite>
+          </blockquote>
+
+          <h3 class="styleguide-h3">Code</h3>
+
+          <h4>Inline code</h4>
+
+          <p>Lorem ipsum <code>dolor sit amet</code> consectetur adipisicing elit. Laboriosam, deserunt dicta
+            recusandae voluptas ab nam dignissimos cum obcaecati dolorem, explicabo aperiam temporibus
+            repellendus id aspernatur nostrum? Quaerat <code>odit</code> pariatur fuga.</p>
+
+          <h4>Pre & code</h4>
+
+          <pre><code><!--
+-->Lorem ipsum dolor sit amet
+consectetur adipisicing elit.
+Ducimus perspiciatis sit repellat eum ullam,
+architecto itaque consequatur beatae.<!--
+                    --></code></pre>
+
+        </div>
+      </section>
+
+      <!-- FORMS -->
+
+      <section class="section section--styleguide" id="forms">
+        <div class="container">
+
+          <h2 id="forms">Forms</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/base/_forms.scss</code></em></p>
+
+          <div class="row">
+            <div class="col">
+              <h3 class="styleguide-h3">Inline forms</h3>
+
+              <h4>Inline forms with block inputs</h4>
+              <div class="form form--inline form--inline-sm margin-bottom">
+                <div class="input-block flex-grow">
+                  <label for="text01">Text input</label>
+                  <div class="input">
+                    <input type="text" id="text01" placeholder="This one has flex grow" />
+                  </div>
+                </div>
+                <div class="input-block">
+                  <label for="area01">Select</label>
+                  <div class="input">
+                    <select name="" id="">
+                      <option value="">One</option>
+                      <option value="">Very very long two</option>
+                      <option value="">Three</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-block">
+                  <div class="label">Checkbox</div>
+                  <div class="input input--inline">
+                    <div class="checkbox">
+                      <input type="checkbox" id="radio10" name="radio01x" checked="checked" />
+                      <label for="radio10"><span>Yes I do</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-block">
+                  <label for="date">Date input</label>
+                  <div class="input">
+                    <input type="date" id="date01" />
+                  </div>
+                </div>
+                <button class="btn btn-primary flex-push-right" type="submit">Go!</button>
+              </div>
+
+              <h4>Inline forms with inline inputs</h4>
+              <div class="form form--inline form--inline-xs margin-bottom">
+                <div class="input-block input-block--inline">
+                  <label for="text01">Email</label>
+                  <div class="input input--inline">
+                    <input type="email" id="" placeholder="Ex: john.doe@gmail.com" />
+                    <button class="input-after btn btn-secondary">
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-arrow-right"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!--
+                <div class="input-block input-block--inline">
+                  <label for="text01">Password</label>
+                  <div class="input">
+                      <input type="password" id="" placeholder="8 numbers"/>
+                  </div>
+                </div>
+                -->
+                <div class="input-block input-block--inline">
+                  <div class="label">Radio</div>
+                  <div class="input input--inline">
+                    <div class="radio">
+                      <input type="radio" id="radio110" name="radio02x" checked="checked" />
+                      <label for="radio110"><span>Why not?</span></label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="radio111" name="radio02x" checked="checked" />
+                      <label for="radio111"><span>No way!</span></label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default btn-round btn-bg-grow flex-push-right" type="reset">
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <use xlink:href="#icon-close"></use>
+                  </svg>
+                  <span class="sr-only">Reset</span>
+                </button>
+                <button class="btn btn-default btn-round btn-bg-grow" type="reset">
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <use xlink:href="#icon-menu"></use>
+                  </svg>
+                  <span class="sr-only">Menu</span>
+                </button>
+                <button class="btn btn-accent btn-round" type="submit">
+                  <span>Login</span>
+                  &nbsp;
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <use xlink:href="#icon-arrow-right"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div>
+              <h3 class="styleguide-h3">Block forms</h3>
+            </div>
+            <div class="col-md-6">
+              <section class="form row">
+                <h4>Block forms with block inputs</h4>
+                <div class="input-block col-md-6 input-block--required">
+                  <label for="text011">Text input</label>
+                  <div class="input">
+                    <input type="text" id="text011" placeholder="Placeholder text" />
+                  </div>
+                  <div class="input-text input-text--info">Info text</div>
+                </div>
+                <div class="input-block col-md-6 input-block--required">
+                  <label for="text02">Text input with a very very long label</label>
+                  <div class="input input--inline">
+                    <div class="input-before">
+                      <span>Before</span>
+                    </div>
+                    <input type="text" id="text02" placeholder="Placeholder text" />
+                  </div>
+                </div>
+                <div class="input-block col-md-6">
+                  <label for="number01">Number input</label>
+                  <div class="input">
+                    <input type="number" id="number01" value="9" />
+                  </div>
+                  <div class="input-text input-text--info">This is the input info text</div>
+                </div>
+                <div class="input-block col-md-6">
+                  <label for="number02">Number input with unit</label>
+                  <div class="input input--inline">
+                    <input type="number" id="number02" value="0" />
+                    <div class="input-after">€</div>
+                  </div>
+                </div>
+                <div class="input-block col-md-6 input-block--required input-block--disabled">
+                  <label for="text012">Disabled text input</label>
+                  <div class="input">
+                    <input type="text" id="text012" placeholder="Placeholder text" disabled />
+                  </div>
+                </div>
+                <div class="input-block col-md-6 input-block--disabled">
+                  <label for="number01">Disabled Number input</label>
+                  <div class="input">
+                    <input type="number" id="number01" value="9" disabled />
+                  </div>
+                  <div class="input-text input-text--info">This is the input info text</div>
+                </div>
+                <!-- other inputs -->
+                <div class="input-block">
+                  <label for="area01">Select</label>
+                  <div class="input">
+                    <select name="" id="">
+                      <option value="">One</option>
+                      <option value="">Very very long two</option>
+                      <option value="">Three</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-block">
+                  <label for="area01">Textarea</label>
+                  <div class="input">
+                    <textarea name="" id="area01" cols="30" rows="10" placeholder="Placeholder text"></textarea>
+                  </div>
+                  <div class="input-text input-text--info">200 characters maximum</div>
+                </div>
+                <!-- radio and checkbox -->
+                <div class="input-block col-md-6">
+                  <div class="label">Radio</div>
+                  <div class="input">
+                    <div class="radio">
+                      <input type="radio" id="radio10" name="radio01x" checked="checked" />
+                      <label for="radio10">Yes I do</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="radio11" name="radio01x" />
+                      <label for="radio11">No way</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-block col-md-6">
+                  <div class="label">Checkbox</div>
+                  <div class="input">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check010" checked="checked" />
+                      <label for="check010">Very very long checkbox label Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.</label>
+                    </div>
+                  </div>
+                  <div class="input-text input-text--info">
+                    This is a very long input info text Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Eligendi, rem.
+                  </div>
+                </div>
+                <div class="input-block input-block--required">
+                  <div class="label">Inline radio</div>
+                  <div class="input input--inline">
+                    <div class="radio">
+                      <input type="radio" id="radio019" name="radios9" />
+                      <label for="radio019">Label radio</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="radio029" name="radios9" />
+                      <label for="radio029">Very long label radio</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="radio039" name="radios9" />
+                      <label for="radio039">Label radio</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-block">
+                  <div class="label">Inline checkbox</div>
+                  <div class="input input--inline">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check10" />
+                      <label for="check10">Label one</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" id="check11" />
+                      <label for="check11">Second label</label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" id="check12" />
+                      <label for="check12">Oh my label!</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div><input type="submit" value="input[type=submit]" /></div>
+                <div>
+                  <button type="submit" class="btn-lg btn-round btn-hollow btn-black btn-caret">
+                    <i class="fa fa-star"></i>
+                    Form submit button
+                  </button>
+                </div>
+              </section>
+            </div>
+
+            <div class="col-md-6">
+              <!-- inline input block -->
+              <h4>Block forms with inline inputs</h4>
+              <section class="form row">
+                <div class="input-block input-block--inline input-block--required">
+                  <label for="text013">Inline text input</label>
+                  <div class="input">
+                    <input type="text" id="text013" placeholder="Placeholder text" />
+                  </div>
+                </div>
+                <div class="input-block input-block--inline input-block--required">
+                  <label for="text022">Inline text input with a very very long label</label>
+                  <div class="input input--inline">
+                    <div class="input-before">
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-percent"></use>
+                      </svg>
+                    </div>
+                    <input type="text" id="text022" placeholder="Placeholder text" />
+                  </div>
+                </div>
+                <div class="input-block input-block--inline">
+                  <label for="number01">Inline input</label>
+                  <div class="input">
+                    <input type="number" id="number01" value="9" />
+                  </div>
+                  <div class="input-text input-text--info">This is the very long input info text, spanning on multiple
+                    lines</div>
+                </div>
+                <div class="input-block input-block--inline">
+                  <label for="number021">Inline input with unit</label>
+                  <div class="input input--inline">
+                    <input type="number" id="number021" value="0" />
+                    <div class="input-after">
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-menu"></use>
+                      </svg>
+                      &nbsp;
+                      <span>Foo</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-block input-block--inline">
+                  <label for="number022">Button before</label>
+                  <div class="input input--inline">
+                    <button class="input-before btn btn-primary">
+                      <span>Bar</span>
+                      &nbsp;
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-dots"></use>
+                      </svg>
+                    </button>
+                    <input type="text" id="number022" placeholder="Some foo" />
+                  </div>
+                </div>
+                <div class="input-block input-block--inline">
+                  <label for="number02">Button after</label>
+                  <div class="input input--inline">
+                    <select name="" id="">
+                      <option value="">One</option>
+                      <option value="">Very very long two</option>
+                      <option value="">Three</option>
+                    </select>
+                    <button class="input-after btn btn-secondary">
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-menu"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="input-block input-block--inline">
+                  <label for="number023">Before and after</label>
+                  <div class="input input--inline">
+                    <div class="input-before">
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-menu"></use>
+                      </svg>
+                    </div>
+                    <input type="text" id="number023" placeholder="Some foo" />
+                    <div class="input-after btn btn-accent">
+                      <span>Baz</span>
+                      &nbsp;
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-arrow-right"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <!-- disabled -->
+                <div class="input-block input-block--inline input-block--required input-block--disabled">
+                  <label for="text014">Disabled inline input</label>
+                  <div class="input">
+                    <input type="text" id="text014" placeholder="Placeholder text" disabled />
+                  </div>
+                </div>
+                <div class="input-block input-block--inline input-block--disabled">
+                  <label for="number01">Disabled inline input</label>
+                  <div class="input">
+                    <input type="number" id="number01" value="9" disabled />
+                  </div>
+                  <div class="input-text input-text--info">This is the input info text</div>
+                </div>
+                <div class="input-block input-block--inline input-block--disabled">
+                  <label for="number02">Before and after</label>
+                  <div class="input input--inline">
+                    <div class="input-before">
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-menu"></use>
+                      </svg>
+                    </div>
+                    <input type="text" id="number02" placeholder="Some foo" disabled />
+                    <button class="input-after btn btn-accent" disabled>
+                      <span>Baz</span>
+                      &nbsp;
+                      <svg class="icon" viewBox="0 0 24 24">
+                        <use xlink:href="#icon-arrow-right"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!-- other inputs -->
+                <div class="input-block input-block--inline">
+                  <label for="area01">Inline multiple select</label>
+                  <div class="input">
+                    <select multiple>
+                      <option value="Choice 1">Choice 1</option>
+                      <option value="Choice 2">Choice 2</option>
+                      <option value="Choice 3">Choice 3</option>
+                      <option value="Choice 4">Choice 4</option>
+                    </select>
+                  </div>
+                  <div class="input-text input-text--info">Hold CTRL key</div>
+                </div>
+                <div class="input-block input-block--inline">
+                  <label for="area01">Inline textarea</label>
+                  <div class="input">
+                    <textarea name="" id="area01" cols="30" rows="10" placeholder="Placeholder text"></textarea>
+                  </div>
+                </div>
+                <!-- error -->
+                <h3 class="styleguide-h3">Error state</h3>
+                <div>
+                  <div class="alert alert--error">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    There are some errors!
+                  </div>
+                </div>
+                <!-- fieldset -->
+                <fieldset>
+                  <div class="row">
+                    <legend>This is a fieldset legend</legend>
+
+                    <div class="input-block col-md-6 input-block--required input-block--error">
+                      <label for="text0111">Text input</label>
+                      <div class="input">
+                        <input type="text" id="text0111" placeholder="Placeholder text" />
+                      </div>
+                      <div class="input-text input-text--error">This field is required.</div>
+                    </div>
+                    <div class="input-block col-md-6 input-block--required input-block--success">
+                      <label for="area011">Select</label>
+                      <div class="input">
+                        <select name="" id="">
+                          <optgroup label="Theropods">
+                            <option>Tyrannosaurus</option>
+                            <option>Velociraptor</option>
+                            <option>Deinonychus</option>
+                          </optgroup>
+                          <optgroup label="Sauropods">
+                            <option>Diplodocus</option>
+                            <option>Saltasaurus</option>
+                            <option>Apatosaurus</option>
+                          </optgroup>
+                        </select>
+                      </div>
+                      <div class="input-text input-text--success">Well done!</div>
+                    </div>
+                    <div class="input-block input-block--required input-block--error">
+                      <div class="label">Inline radio</div>
+                      <div class="input input--inline">
+                        <div class="radio">
+                          <input type="radio" id="radio911" name="radio111" />
+                          <label for="radio911">Label one</label>
+                        </div>
+                        <div class="radio">
+                          <input type="radio" id="radio921" name="radio111" />
+                          <label for="radio921">Very long label radio</label>
+                        </div>
+                        <div class="radio">
+                          <input type="radio" id="radio931" name="radio111" />
+                          <label for="radio931">Another label</label>
+                        </div>
+                      </div>
+                      <div class="input-text input-text--error">This field is required.</div>
+                    </div>
+                  </div>
+                </fieldset>
+                <!-- mentions -->
+                <div>
+                  <p class="font-size-small">Fields marked with a * are required.</p>
+                  <p class="font-size-small">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, consequatur
+                    aperiam et ullam culpa aut quod? Suscipit, alias ea? A suscipit neque, dolorem
+                    aspernatur provident incidunt sint fugit dolorum quas!
+                  </p>
+                </div>
+              </section>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ICONS -->
+
+      <section class="section section--styleguide" id="icons">
+        <div class="container">
+
+          <h2>Icons</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/components/_icons.scss</code></em></p>
+
+          <h3 class="styleguide-h3">Icon set</h3>
+
+          <div class="styleguide-icons styleguide-icons--icon-set">
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+              <span>arrow-left</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+              <span>arrow-right</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+              <span>close</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-dots"></use>
+              </svg>
+              <span>dots</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>
+              <span>menu</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg>
+              <span>percent</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-cart"></use>
+              </svg>
+              <span>cart</span>
+            </div>
+          </div>
+
+          <h3 class="styleguide-h3">Icon sizing</h3>
+
+          <h4>Size: extra-extra-large (32px)</h4>
+
+          <div class="styleguide-icons styleguide-icons--dark">
+            <div>
+              <svg class="icon icon-xxl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xxl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xxl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xxl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-dots"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xxl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xxl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg>
+            </div>
+          </div>
+
+          <h4>Size: extra-large (24px)</h4>
+
+          <div class="styleguide-icons styleguide-icons--dark">
+            <div>
+              <svg class="icon icon-xl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-dots"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg>
+            </div>
+          </div>
+
+          <h4>Size: large (20px)</h4>
+
+          <div class="styleguide-icons styleguide-icons--dark">
+            <div>
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <use xlink:href="#icon-dots"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg>
+            </div>
+          </div>
+
+          <h4>Size: default (16px)</h4>
+
+          <div class="styleguide-icons styleguide-icons--dark">
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-dots"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24" width="36" height="36">
+                <use xlink:href="#icon-percent"></use>
+              </svg>
+            </div>
+            <p>This one has HTML <code>width="36" height="36"</code> attributes override</p>
+          </div>
+
+          <h4>Size: small (14px)</h4>
+
+          <div class="styleguide-icons styleguide-icons--dark">
+            <div>
+              <svg class="icon icon-sm" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-sm" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-sm" viewBox="0 0 24 24">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-sm" viewBox="0 0 24 24">
+                <use xlink:href="#icon-dots"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-sm" viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-sm" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg>
+            </div>
+          </div>
+
+          <h4>Size: extra-small (12px)</h4>
+
+          <div class="styleguide-icons styleguide-icons--dark">
+            <div>
+              <svg class="icon icon-xs" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xs" viewBox="0 0 24 24">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xs" viewBox="0 0 24 24">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xs" viewBox="0 0 24 24">
+                <use xlink:href="#icon-dots"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xs" viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>
+            </div>
+            <div>
+              <svg class="icon icon-xs" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg>
+            </div>
+          </div>
+
+          <h3 class="styleguide-h3">Inline icons</h3>
+
+          <p class="font-size-biggest">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus pariatur
+            incidunt labore est obcaecati dolores, temporibus <a href="#"><svg class="icon icon--inline icon-xxl"
+                viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>&nbsp;An inline icon</a> inventore magni reiciendis voluptatum <a href="#">Another inline
+              icon&nbsp;<svg class="icon icon--inline icon-xxl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg></a> et nisi dicta ex autem! Accusamus ducimus iusto nobis.</p>
+
+          <p class="font-size-bigger">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus pariatur
+            incidunt labore est obcaecati dolores, temporibus <a href="#"><svg class="icon icon--inline icon-xl"
+                viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>&nbsp;An inline icon</a> inventore magni reiciendis voluptatum <a href="#">Another inline
+              icon&nbsp;<svg class="icon icon--inline icon-xl" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg></a> et nisi dicta ex autem! Accusamus ducimus iusto nobis.</p>
+
+          <p class="font-size-big">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus pariatur
+            incidunt labore est obcaecati dolores, temporibus <a href="#"><svg class="icon icon--inline icon-lg"
+                viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>&nbsp;An inline icon</a> inventore magni reiciendis voluptatum <a href="#">Another inline
+              icon&nbsp;<svg class="icon icon--inline icon-lg" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg></a> et nisi dicta ex autem! Accusamus ducimus iusto nobis.</p>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus pariatur incidunt labore est
+            obcaecati dolores, temporibus <a href="#"><svg class="icon icon--inline" viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>&nbsp;ICONIC</a> inventore magni reiciendis voluptatum <a href="#">Another inline icon&nbsp;<svg
+                class="icon icon--inline" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg></a> et nisi dicta ex autem! Accusamus ducimus iusto nobis.</p>
+
+          <p class="font-size-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus pariatur
+            incidunt labore est obcaecati dolores, temporibus <a href="#"><svg class="icon icon--inline icon-sm"
+                viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>&nbsp;An inline icon</a> inventore magni reiciendis voluptatum <a href="#">Another inline
+              icon&nbsp;<svg class="icon icon--inline icon-sm" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg></a> et nisi dicta ex autem! Accusamus ducimus iusto nobis.</p>
+
+          <p class="font-size-smaller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut possimus pariatur
+            incidunt labore est obcaecati dolores, temporibus <a href="#"><svg class="icon icon--inline icon-xs"
+                viewBox="0 0 24 24">
+                <use xlink:href="#icon-menu"></use>
+              </svg>&nbsp;An inline icon</a> inventore magni reiciendis voluptatum <a href="#">Another inline
+              icon&nbsp;<svg class="icon icon--inline icon-xs" viewBox="0 0 24 24">
+                <use xlink:href="#icon-percent"></use>
+              </svg></a> et nisi dicta ex autem! Accusamus ducimus iusto nobis.</p>
+
+        </div>
+      </section>
+
+      <!-- BUTTONS -->
+
+      <section class="section section--styleguide" id="buttons">
+        <div class="container">
+
+          <h2>Buttons</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/base/_buttons.scss</code></em></p>
+
+          <div class="row styleguide-buttons">
+            <div class="col-xs-6 col-sm-4 col-md-3">
+              <h3 class="styleguide-h3">Colors</h3>
+              <button class="btn">.btn</button>
+              <button class="btn btn-default">.btn-default</button>
+              <button class="btn btn-black">.btn-black</button>
+              <button class="btn btn-gray">.btn-gray</button>
+              <button class="btn btn-white">.btn-white</button>
+              <button class="btn btn-primary">.btn-primary</button>
+              <button class="btn btn-secondary">.btn-secondary</button>
+              <button class="btn btn-accent">.btn-accent</button>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3">
+              <h3 class="styleguide-h3">Rounded</h3>
+              <button class="btn btn-round">.btn-round</button>
+              <button class="btn btn-default btn-round">.btn-round</button>
+              <button class="btn btn-black btn-round">.btn-round</button>
+              <button class="btn btn-gray btn-round">.btn-round</button>
+              <button class="btn btn-white btn-round">.btn-round</button>
+              <button class="btn btn-primary btn-round">.btn-round</button>
+              <button class="btn btn-secondary btn-round">.btn-round</button>
+              <button class="btn btn-accent btn-round">.btn-round</button>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3">
+              <h3 class="styleguide-h3">Hollow</h3>
+              <button class="btn btn-hollow">.btn-hollow</button>
+              <div style="background: black; padding: 0.75rem; margin-bottom: 1.5rem;">
+                <button class="btn btn-default btn-hollow">.btn-hollow</button>
+              </div>
+              <button class="btn btn-black btn-hollow">.btn-hollow</button>
+              <button class="btn btn-gray btn-hollow">.btn-hollow</button>
+              <div style="background: black; padding: 0.75rem; margin-bottom: 1.5rem;">
+                <button class="btn btn-white btn-hollow">.btn-hollow</button>
+              </div>
+              <button class="btn btn-primary btn-hollow">.btn-hollow</button>
+              <button class="btn btn-secondary btn-hollow">.btn-hollow</button>
+              <button class="btn btn-accent btn-hollow">.btn-hollow</button>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3">
+              <h3 class="styleguide-h3">Rounded hollow</h3>
+              <button class="btn btn-round btn-hollow">.btn-hollow</button>
+              <div style="background: black; padding: 0.75rem; margin-bottom: 1.5rem;">
+                <button class="btn btn-default btn-round btn-hollow">
+                  .btn-hollow
+                </button>
+              </div>
+              <button class="btn btn-black btn-round btn-hollow">
+                .btn-hollow
+              </button>
+              <button class="btn btn-gray btn-round btn-hollow">.btn-hollow</button>
+              <div style="background: black; padding: 0.75rem; margin-bottom: 1.5rem;">
+                <button class="btn btn-white btn-round btn-hollow">
+                  .btn-hollow
+                </button>
+              </div>
+              <button class="btn btn-primary btn-round btn-hollow">
+                .btn-hollow
+              </button>
+              <button class="btn btn-secondary btn-round btn-hollow">
+                .btn-hollow
+              </button>
+              <button class="btn btn-accent btn-round btn-hollow">
+                .btn-hollow
+              </button>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3">
+              <h3 class="styleguide-h3">Sizes</h3>
+              <button class="btn btn-primary btn-xs">.btn-xs</button>
+              <button class="btn btn-primary btn-sm">.btn-sm</button>
+              <button class="btn btn-primary">.btn</button>
+              <a href="#" class="btn btn-primary btn-lg">.btn-lg</a>
+              <button class="btn btn-primary btn-xl">.btn-xl</button>
+
+              <h3 class="styleguide-h3">Layout</h3>
+              <button class="btn btn-primary btn-block">.btn-block</button>
+              <button class="btn btn-secondary btn-wrap">
+                .btn-wrap very very long button multi-line content
+              </button>
+              <button class="btn btn-black btn-wrap btn-round">
+                .btn-wrap rounded very very long button multi-line content
+              </button>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3">
+              <h3 class="styleguide-h3">Background grow</h3>
+              <button class="btn btn-bg-grow">.bg-grow</button>
+              <button class="btn btn-bg-grow">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </button>
+              <button class="btn btn-bg-grow btn-round">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-menu"></use>
+                </svg>
+              </button>
+              <button class="btn btn-default btn-bg-grow btn-round">.bg-grow default</button>
+              <button class="btn btn-default btn-bg-grow btn-round">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-menu"></use>
+                </svg>
+              </button>
+              <!-- <div style="background: black; padding: 0.75rem; margin-bottom: 1.5rem;">
+                            </div> -->
+              <button class="btn btn-black btn-bg-grow">.bg-grow black</button>
+              <button class="btn btn-black btn-bg-grow btn-round">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </button>
+              <button class="btn btn-gray btn-bg-grow">.bg-grow gray</button>
+              <button class="btn btn-gray btn-bg-grow btn-round">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </button>
+              <button class="btn btn-white btn-bg-grow">.bg-grow white</button>
+              <button class="btn btn-white btn-bg-grow btn-round">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </button>
+              <button class="btn btn-primary btn-bg-grow">.bg-grow primary</button>
+              <button class="btn btn-primary btn-bg-grow btn-round">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </button>
+              <button class="btn btn-secondary btn-bg-grow btn-round">.bg-grow secondary</button>
+              <button class="btn btn-secondary btn-bg-grow btn-round">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </button>
+              <button class="btn btn-accent btn-bg-grow">.bg-grow accent</button>
+              <button class="btn btn-accent btn-bg-grow btn-round">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </button>
+
+              <h3 class="styleguide-h3">Disabled</h3>
+              <button class="btn" disabled="disabled">disabled</button>
+              <button class="btn btn-default" disabled="disabled">disabled</button>
+              <button class="btn btn-black" disabled="disabled">disabled</button>
+              <button class="btn btn-gray" disabled="disabled">disabled</button>
+              <button class="btn btn-white" disabled="disabled">disabled</button>
+              <button class="btn btn-primary btn-round" disabled="disabled">
+                disabled
+              </button>
+              <button class="btn btn-secondary btn-hollow" disabled="disabled">
+                disabled
+              </button>
+              <button class="btn btn-accent" disabled="disabled">disabled</button>
+            </div>
+            <!-- <div class="col-xs-6 col-sm-4 col-md-3">
+                        </div> -->
+            <div class="col-xs-12 col-md-6">
+              <h3 class="styleguide-h3">Icons</h3>
+              <button class="btn">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-menu"></use>
+                </svg>
+                &nbsp;
+                MENU</button>
+              <button class="btn btn-default">
+                .btn-default
+                &nbsp;
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-percent"></use>
+                </svg>
+              </button>
+              <button class="btn btn-black btn-block btn-round">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-dots"></use>
+                </svg>
+                &nbsp;
+                .btn-black
+              </button>
+              <button class="btn btn-secondary btn-sm btn-wrap">
+                .btn-wrap very very long button multi-line content
+                &nbsp;
+                <svg class="icon icon-xl" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-menu"></use>
+                </svg>
+              </button>
+              <button class="btn btn-gray btn-lg">
+                .btn-gray
+                &nbsp;
+                <svg class="icon icon-lg" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-menu"></use>
+                </svg>
+              </button>
+              <button class="btn btn-primary btn-xs">
+                <svg class="icon icon-xs" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-percent"></use>
+                </svg>
+              </button>
+              <button class="btn btn-white">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>&nbsp;
+                .btn-white
+              </button>
+              <button class="btn btn-primary btn-round btn-hollow">
+                .btn-primary
+                &nbsp;
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg>
+              </button>
+              <br>
+              <button class="btn btn-secondary btn-xs">
+                .btn-xs&nbsp;
+                <svg class="icon icon-xs" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg>
+              </button>
+              <button class="btn btn-accent btn-xs">
+                <svg class="icon icon-xs" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>
+              </button>
+              <br>
+              <button class="btn btn-secondary btn-sm btn-round">
+                .btn-sm&nbsp;
+                <svg class="icon icon-sm" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-menu"></use>
+                </svg>
+              </button>
+              <button class="btn btn-accent btn-sm btn-round">
+                <svg class="icon icon-sm" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-percent"></use>
+                </svg>
+              </button>
+              <br>
+              <button class="btn btn-secondary">
+                .btn&nbsp;
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-menu"></use>
+                </svg>
+              </button>
+              <button class="btn btn-accent">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </button>
+              <br>
+              <button class="btn btn-secondary btn-lg btn-hollow">
+                .btn-lg&nbsp;
+                <svg class="icon icon-lg" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-menu"></use>
+                </svg>
+              </button>
+              <button class="btn btn-accent btn-lg btn-hollow">
+                <svg class="icon icon-lg" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-dots"></use>
+                </svg>
+              </button>
+              <br>
+              <button class="btn btn-secondary btn-xl">
+                .btn-xl&nbsp;
+                <svg class="icon icon-xl" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-menu"></use>
+                </svg>
+              </button>
+              <button class="btn btn-accent btn-xl">
+                <svg class="icon icon-xl" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-dots"></use>
+                </svg>
+              </button>
+            </div>
+            <!-- <div class="col-xs-6 col-sm-4 col-md-3">
+                            <h3 class="styleguide-h3">Caret</h3>
+                            <button class="btn btn-default btn-caret">.btn-caret</button>
+                            <button class="btn btn-primary btn-caret btn-xs">.btn-caret</button>
+                            <button class="btn btn-black btn-caret btn-round btn-xl">
+                                .btn-caret
+                            </button>
+                            <div style="background: black; padding: 0.75rem; margin-bottom: 1.5rem;">
+                                <button class="btn btn-white btn-caret btn-hollow btn-block">
+                                    .btn-caret
+                                </button>
+                            </div>
+                            <button class="btn btn-secondary btn-caret btn-wrap">
+                                .btn-caret very very long button multi-line content
+                            </button>
+                        </div> -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TABS -->
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h2>Tabs</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/components/_tabs.scss</code> and
+              <code>js/lib/tabs.js</code></em></p>
+
+          <div class="styleguide-tabs-toggles">
+            <button class="tab-toggle btn active" data-tabs-toggle data-tabs-group="my-tabs"
+              data-tabs-target="#my_tab_1">Tab #1</button>
+            <button class="tab-toggle btn" data-tabs-toggle data-tabs-group="my-tabs" data-tabs-target="#my_tab_2">Tab
+              #2</button>
+            <button class="tab-toggle btn" data-tabs-toggle data-tabs-group="my-tabs" data-tabs-target="#my_tab_3">Tab
+              #3</button>
+          </div>
+
+          <div class="styleguide-tabs-contents">
+            <div class="tab-content active" id="my_tab_1" data-tabs-content data-tabs-group="my-tabs">
+              <h3>Tab #1</h3>
+
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id neque error minus sed saepe eveniet
+                provident officiis rerum sequi.</p>
+            </div>
+
+            <div class="tab-content" id="my_tab_2" data-tabs-content data-tabs-group="my-tabs">
+              <h3>Tab #2</h3>
+
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, unde quod. Accusantium ratione aliquid
+                eius veniam consequatur soluta, corrupti, obcaecati ipsa suscipit animi veritatis cumque tenetur error
+                blanditiis aut molestiae commodi laborum! Molestiae, mollitia quas.</p>
+            </div>
+
+            <div class="tab-content" id="my_tab_3" data-tabs-content data-tabs-group="my-tabs">
+              <h3>Tab #3</h3>
+
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quidem eligendi natus rerum cumque sed
+                consequuntur cupiditate velit nesciunt, inventore nobis quam qui dignissimos unde veniam illo minima
+                temporibus doloribus!</p>
+            </div>
+          </div>
+
+          <div class="styleguide-tabs-toggles">
+            <button class="tab-toggle btn active" data-tabs-toggle data-tabs-group="my-tabs-2"
+              data-tabs-target="#my_tab_4">Tab #4</button>
+            <button class="tab-toggle btn" data-tabs-toggle data-tabs-group="my-tabs-2" data-tabs-target="#my_tab_5">Tab
+              #5</button>
+            <button class="tab-toggle btn" data-tabs-toggle data-tabs-group="my-tabs-2" data-tabs-target="#my_tab_6">Tab
+              #6</button>
+          </div>
+
+          <div class="styleguide-tabs-contents">
+            <div class="tab-content active" id="my_tab_4" data-tabs-content data-tabs-group="my-tabs-2">
+              <h3>Tab #4</h3>
+
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id neque error minus sed saepe eveniet
+                provident officiis rerum sequi.</p>
+            </div>
+
+            <div class="tab-content" id="my_tab_5" data-tabs-content data-tabs-group="my-tabs-2">
+              <h3>Tab #5</h3>
+
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, unde quod. Accusantium ratione aliquid
+                eius veniam consequatur soluta, corrupti, obcaecati ipsa suscipit animi veritatis cumque tenetur error
+                blanditiis aut molestiae commodi laborum! Molestiae, mollitia quas.</p>
+            </div>
+
+            <div class="tab-content" id="my_tab_6" data-tabs-content data-tabs-group="my-tabs-2">
+              <h3>Tab #6</h3>
+
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quidem eligendi natus rerum cumque sed
+                consequuntur cupiditate velit nesciunt, inventore nobis quam qui dignissimos unde veniam illo minima
+                temporibus doloribus!</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SHADOWS -->
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h2>Shadows</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/base/_shadows.scss</code></em></p>
+
+          <div class="row">
+            <div class="col-xxs-6 col-sm-3">
+              <div class="styleguide-shadow-block shadow-0">.shadow-0</div>
+            </div>
+            <div class="col-xxs-6 col-sm-3">
+              <div class="styleguide-shadow-block shadow-1">.shadow-1</div>
+            </div>
+            <div class="col-xxs-6 col-sm-3">
+              <div class="styleguide-shadow-block shadow-2">.shadow-2</div>
+            </div>
+            <div class="col-xxs-6 col-sm-3">
+              <div class="styleguide-shadow-block shadow-3">.shadow-3</div>
+            </div>
+            <div class="col-xxs-6 col-sm-3">
+              <div class="styleguide-shadow-block shadow-4">.shadow-4</div>
+            </div>
+            <div class="col-xxs-6 col-sm-3">
+              <div class="styleguide-shadow-block shadow-5">.shadow-5</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CAPPED WIDTH -->
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h2>Capped width</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/layout/_capped-width.scss</code></em></p>
+
+          <h3 class="styleguide-h3">.max-width-xs</h3>
+          <p class="max-width-xs">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi neque perspiciatis
+            perferendis, voluptate enim aut, magni optio laborum dolorem placeat voluptatibus quis quia. Debitis nihil,
+            quod unde incidunt, impedit, assumenda a corporis rem id eligendi aspernatur error explicabo excepturi? Quas
+            cumque, natus quaerat iste nam sunt sint cum quis perspiciatis adipisci, suscipit error ut praesentium
+            dolorem modi exercitationem unde velit laboriosam! Velit, veniam sint? Ullam nobis provident reprehenderit,
+            nisi earum quae neque minima, aspernatur commodi debitis omnis sed veritatis quam ipsum ipsam, quaerat
+            repellat recusandae. Qui consequuntur necessitatibus eveniet facilis doloremque.</p>
+
+          <h3 class="styleguide-h3">.max-width-sm</h3>
+          <p class="max-width-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi neque perspiciatis
+            perferendis, voluptate enim aut, magni optio laborum dolorem placeat voluptatibus quis quia. Debitis nihil,
+            quod unde incidunt, impedit, assumenda a corporis rem id eligendi aspernatur error explicabo excepturi? Quas
+            cumque, natus quaerat iste nam sunt sint cum quis perspiciatis adipisci, suscipit error ut praesentium
+            dolorem modi exercitationem unde velit laboriosam! Velit, veniam sint? Ullam nobis provident reprehenderit,
+            nisi earum quae neque minima, aspernatur commodi debitis omnis sed veritatis quam ipsum ipsam, quaerat
+            repellat recusandae. Qui consequuntur necessitatibus eveniet facilis doloremque. Dolores officia quaerat
+            consequuntur, nemo accusantium accusamus ipsum, ex, explicabo aspernatur quam odit quod aperiam magni culpa
+            tenetur? Nihil magni magnam nobis dolorum illo quo debitis et accusamus ratione.</p>
+
+          <h3 class="styleguide-h3">.max-width-md</h3>
+          <p class="max-width-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi neque perspiciatis
+            perferendis, voluptate enim aut, magni optio laborum dolorem placeat voluptatibus quis quia. Debitis nihil,
+            quod unde incidunt, impedit, assumenda a corporis rem id eligendi aspernatur error explicabo excepturi? Quas
+            cumque, natus quaerat iste nam sunt sint cum quis perspiciatis adipisci, suscipit error ut praesentium
+            dolorem modi exercitationem unde velit laboriosam! Velit, veniam sint? Ullam nobis provident reprehenderit,
+            nisi earum quae neque minima, aspernatur commodi debitis omnis sed veritatis quam ipsum ipsam, quaerat
+            repellat recusandae. Qui consequuntur necessitatibus eveniet facilis doloremque. Dolores officia quaerat
+            consequuntur, nemo accusantium accusamus ipsum, ex, explicabo aspernatur quam odit quod aperiam magni culpa
+            tenetur? Nihil magni magnam nobis dolorum illo quo debitis et accusamus ratione.</p>
+
+        </div>
+      </section>
+
+      <!-- FIXED RATIO -->
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h2>Fixed ratio blocks</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/layout/_fixed-ratio.scss</code></em></p>
+
+          <h3 class="styleguide-h3">Square ratio</h3>
+          <div class="max-width-xxs">
+            <div class="fixed-ratio fixed-ratio--1by1" style="background-color: tomato;">
+            </div>
+          </div>
+
+          <h3 class="styleguide-h3">16/9 ratio, responsive media embed</h3>
+          <div class="max-width-xs">
+            <div class="fixed-ratio fixed-ratio--16by9" style="background-color: lightseagreen;">
+              <!-- <iframe src="https://www.youtube.com/embed/xcJtL7QggTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MODAL AND OVERLAY -->
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h2>Modal and overlay</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>scss/base/_modal.scss</code> and
+              <code>js/lib/modal.js</code></em></p>
+
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modal_1">Small modal</button>
+
+          <button class="btn btn-secondary" data-toggle="modal" data-target="#modal_2">Default modal</button>
+
+          <button class="btn btn-accent" data-toggle="modal" data-target="#modal_3">Large modal</button>
+
+        </div>
+      </section>
+
+      <!-- TOGGLE -->
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h2>Toggle helper</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>js/lib/toggle.js</code></em></p>
+
+          <p>
+            <button class="btn btn-default" data-toggle data-toggle-classname="btn-primary">Toggle me</button>
+          </p>
+
+          <p>
+            <button class="btn btn-secondary" data-toggle=".styleguide-toggle-target">Togglers with targets</button>
+            <button class="btn btn-secondary" data-toggle=".styleguide-toggle-target">Togglers with targets</button>
+          </p>
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="styleguide-toggle-target margin-bottom-half">I'm the target</div>
+            </div>
+            <div class="col-xs-6">
+              <div class="styleguide-toggle-target">Me too</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SCROLLBARS -->
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h2>Custom scrollbars</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>css/lib/layout/_scrollbars.scss</code></em></p>
+
+          <div class="row row--center">
+            <div class="col-xs-6 col-md-4">
+              <div class="custom-scrollbar styleguide-card" style="height: 20rem; overflow: auto;">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iure unde sunt, cupiditate harum ab iusto veritatis? Dolores, alias! Quis vel itaque, repellendus debitis earum ratione? Ab reprehenderit exercitationem a autem illo quas porro eveniet excepturi omnis. Placeat, rem? Totam minima voluptates alias amet dolores, sapiente ipsam cupiditate fuga nobis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iure unde sunt, cupiditate harum ab iusto veritatis? Dolores, alias! Quis vel itaque, repellendus debitis earum ratione? Ab reprehenderit exercitationem a autem illo quas porro eveniet excepturi omnis. Placeat, rem? Totam minima voluptates alias amet dolores, sapiente ipsam cupiditate fuga nobis.
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <div class="custom-scrollbar styleguide-card" style="height: 20rem; overflow: auto;">
+                <div style="width: 200%;">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iure unde sunt, cupiditate harum ab iusto veritatis? Dolores, alias!
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <div class="custom-scrollbar styleguide-card" style="height: 20rem; overflow: auto;">
+                <div style="width: 200%;">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iure unde sunt, cupiditate harum ab iusto veritatis? Dolores, alias! Quis vel itaque, repellendus debitis earum ratione? Ab reprehenderit exercitationem a autem illo quas porro eveniet excepturi omnis. Placeat, rem? Totam minima voluptates alias amet dolores, sapiente ipsam cupiditate fuga nobis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iure unde sunt, cupiditate harum ab iusto veritatis? Dolores, alias! Quis vel itaque, repellendus debitis earum ratione? Ab reprehenderit exercitationem a autem illo quas porro eveniet excepturi omnis. Placeat, rem? Totam minima voluptates alias amet dolores, sapiente ipsam cupiditate fuga nobis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iure unde sunt, cupiditate harum ab iusto veritatis? Dolores, alias! Quis vel itaque, repellendus debitis earum ratione? Ab reprehenderit exercitationem a autem illo quas porro eveniet excepturi omnis. Placeat, rem? Totam minima voluptates alias amet dolores, sapiente ipsam cupiditate fuga nobis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iure unde sunt, cupiditate harum ab iusto veritatis? Dolores, alias! Quis vel itaque, repellendus debitis earum ratione? Ab reprehenderit exercitationem a autem illo quas porro eveniet excepturi omnis. Placeat, rem? Totam minima voluptates alias amet dolores, sapiente ipsam cupiditate fuga nobis.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SCROLLER -->
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h2>Scroller helper</h2>
+          <p class="styleguide-p-sourcecode"><em>Source code: <code>js/lib/scroller.js</code></em></p>
+
+          <p>
+            <button class="btn btn-default" data-scroll="#colors">Scroll to #colors section</button>
+          </p>
+
+          <p>
+            Note: all links to local anchors like <code>&lt;a href="#foo"&gt;</code> are automatically scrollers by default.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- SLIDER DEMO -->
+
+      <section class="section section--styleguide">
+
+        <div class="container">
+          <h2>Slider demo</h2>
+        </div>
+
+        <div class="styleguide-tiny-slider tiny-slider">
+          <div class="tiny-slide tiny-slide-1">Slide 1</div>
+          <div class="tiny-slide tiny-slide-2">Slide 2</div>
+          <div class="tiny-slide tiny-slide-3">Slide 3</div>
+          <div class="tiny-slide tiny-slide-4">Slide 4</div>
+          <div class="tiny-slide tiny-slide-5">Slide 5</div>
+        </div>
+
+      </section>
+
+      <!-- IMAGE TESTS -->
+
+      <section class="section section--styleguide">
+        <div class="container">
+
+          <h2>Image test</h2>
+          <div class="styleguide-image-test">
+            <!-- <img src="dist/img/static/logo-diatem.jpg" alt="An image"> -->
+            <img src="logo-diatem.jpg" alt="An image">
+          </div>
+          <div class="styleguide-image-test">
+            <!-- <img src="dist/img/static/logo-diatem-flipped.png" alt="An image"> -->
+            <img src="logo-diatem-flipped.png" alt="An image">
+          </div>
+
+          <h2>Background image test</h2>
+          <div class="styleguide-bg-image-test styleguide-bg-image-test--1"></div>
+          <div class="styleguide-bg-image-test styleguide-bg-image-test--2"></div>
+
+        </div>
+      </section>
+
+      <!-- End of styleguide content -->
+    </main>
+
+    <!-- SITE FOOTER -->
+
+    <footer class="site-footer">
+
+      <!-- PRE-FOOTER -->
+
+      <!-- <section class="section section--pre-footer">
+                <div class="container">
+                    <div>This is the pre-footer section</div>
+                </div>
+            </section> -->
+
+      <!-- FOOTER -->
+
+      <!-- <section class="section section--footer">
+                <div class="container">
+                    <div>This is the footer section</div>
+                </div>
+            </section> -->
+
+      <!-- POST-FOOTER -->
+
+      <section class="section section--post-footer">
+        <div class="container">
+          <div class="footer-made-by">
+            <em>Made with ♥ by&nbsp;</em>
+            <a href="https://diatem.net" target="_blank" class="footer-made-by__link">
+              <svg viewBox="0 0 200 56" width="75" height="21">
+                <use xlink:href="#logo-diatem--no-baseline--no-color"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+  </div><!-- End .site-wrapper -->
+
+  <!-- OVERLAY AND MODAL -->
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Small modal -->
+  <dialog class="modal modal-sm" id="modal_1" role="dialog" aria-labelledby="modal_1-title" aria-hidden="true">
+    <div class="modal__header">
+      <div class="modal__title h3" id="modal_1-title">Small Modal title</div>
+      <button class="modal__btn-close" data-modal="close">
+        <svg class="icon icon-lg" viewBox="0 0 24 24">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+        <span class="sr-only">Close</span>
+      </button>
+    </div>
+    <div class="modal__body">
+      <p>Short confirmation message</p>
+    </div>
+    <div class="modal__footer">
+      <button class="modal__btn-dismiss" data-modal="close">Decline</button>
+      <button class="modal__btn-accept" data-modal="close" data-modal-focus>Accept</button>
+    </div>
+  </dialog>
+
+  <!-- Default modal -->
+  <dialog class="modal" id="modal_2" role="dialog" aria-labelledby="modal_2-title" aria-hidden="true">
+    <div class="modal__header">
+      <div class="modal__title h3" id="modal_2-title">Default modal title</div>
+      <button class="modal__btn-close" data-modal="close">
+        <svg class="icon icon-lg" viewBox="0 0 24 24">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+        <span class="sr-only">Close</span>
+      </button>
+    </div>
+    <div class="modal__body">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error repellendus, alias inventore
+        accusantium reiciendis, voluptas, consequuntur assumenda aliquid quos vitae officia delectus
+        necessitatibus nihil suscipit. Incidunt suscipit modi doloremque.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error repellendus, alias inventore
+        accusantium reiciendis, voluptas, consequuntur assumenda aliquid quos vitae officia delectus
+        necessitatibus nihil suscipit. Incidunt suscipit modi doloremque.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error repellendus, alias inventore
+        accusantium reiciendis, voluptas, consequuntur assumenda aliquid quos vitae officia delectus
+        necessitatibus nihil suscipit. Incidunt suscipit modi doloremque.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error repellendus, alias inventore
+        accusantium reiciendis, voluptas, consequuntur assumenda aliquid quos vitae officia delectus
+        necessitatibus nihil suscipit. Incidunt suscipit modi doloremque.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error repellendus, alias inventore
+        accusantium reiciendis, voluptas, consequuntur assumenda aliquid quos vitae officia delectus
+        necessitatibus nihil suscipit. Incidunt suscipit modi doloremque.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error repellendus, alias inventore
+        accusantium reiciendis, voluptas, consequuntur assumenda aliquid quos vitae officia delectus
+        necessitatibus nihil suscipit. Incidunt suscipit modi doloremque.</p>
+    </div>
+    <div class="modal__footer">
+      <button class="modal__btn-dismiss" data-modal="close">Decline</button>
+      <button class="modal__btn-accept btn-secondary" data-modal="close" data-modal-focus>Accept</button>
+    </div>
+  </dialog>
+
+  <!-- Large modal -->
+  <dialog class="modal modal-lg" id="modal_3" role="dialog" aria-labelledby="modal_3-title" aria-hidden="true">
+    <div class="modal__header">
+      <div class="modal__title h3" id="modal_3-title">Large modal title</div>
+      <button class="modal__btn-close btn btn-round btn-bg-grow" data-modal="close">
+        <svg class="icon icon-lg" viewBox="0 0 24 24">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+        <span class="sr-only">Close</span>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="input-block">
+        <label for="text1000">Text input</label>
+        <div class="input">
+          <input type="text" id="text1000" placeholder="This one has focus" data-modal-focus />
+        </div>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error repellendus, alias inventore
+        accusantium reiciendis, voluptas, consequuntur assumenda aliquid quos vitae officia delectus
+        necessitatibus nihil suscipit. Incidunt suscipit modi doloremque.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error repellendus, alias inventore
+        accusantium reiciendis, voluptas, consequuntur assumenda aliquid quos vitae officia delectus
+        necessitatibus nihil suscipit. Incidunt suscipit modi doloremque.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error repellendus, alias inventore
+        accusantium reiciendis, voluptas, consequuntur assumenda aliquid quos vitae officia delectus
+        necessitatibus nihil suscipit. Incidunt suscipit modi doloremque.</p>
+    </div>
+    <div class="modal__footer">
+      <button class="modal__btn-dismiss" data-modal="close">Decline</button>
+      <button class="modal__btn-accept btn-accent" data-modal="close" data-modalfocus>Accept</button>
+    </div>
+  </dialog>
+
+  <!-- DEBUG ZONE -->
+  <div class="debug-zone">
+    <div class="debug-zone__item debug-zone__item--screen-width js-debug-item-screen-width">0</div>
+    <div class="debug-zone__item debug-zone__item--bp"></div>
+  </div>
+
+  <!-- MAIN JS SCRIPT -->
+  <script type="module" src="/src/js/main.js"></script>
+
+  <!-- INLINE SVG SPRITES -->
+
+</body>
+
+</html>

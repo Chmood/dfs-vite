@@ -1,0 +1,356 @@
+/*******************************************************************************
+ * variables.scss
+ * Path: _variables.scss
+ ******************************************************************************/
+
+@use "sass:math";
+
+// Global class generating
+$generate-classes: true;
+
+////////////////////////////////////////////////////////////////////////////////
+// LAYOUT
+
+// UNIT TOOLS
+
+$browser-fontsize-base: 16 !default; // Default browser font-size in px (unitless)
+$pixels-per-rem: 10 !default; // Root font-size in px (unitless)
+
+// GUTTER
+
+$gutter: 3.2rem !default; // Gutter base size
+
+// [Early core module @import]
+// This allows to use the computed gutter variables in the following declarations
+@import "lib/base/gutter";
+
+// BREAKPOINTS
+
+$generate-breakpoints-classes: true !default;
+
+// List of breakpoint names and sizes
+
+// Common screen sizes, in em unit (1em = 16px, browser default font-size)
+// 'xxxs':  15em,    //  240 px (----) *
+
+// 'xxs':   20em,    //  320 px (+33%)
+// 'xs':    30em,    //  480 px (+50%) * (x2)
+// 's':     40em,    //  640 px (+33%)
+
+// 'sm':    48em,    //  768 px (+20%)
+// 'md':    60em,    //  960 px (+25%) * (x2)
+// 'lg':    75em,    // 1200 px (+25%)
+
+// 'xl':    90em,    // 1440 px (+20%)
+// 'xxl':   100em,   // 1600 px (----) (+33%)
+// 'xxxl':  120em    // 1920 px (+33%) * (x2)
+
+// 'xw':    150em    // 2400 px (+25%)
+// 'xxw':   200em    // 3200 px (+33%)
+// 'xxxw':  240em    // 3840 px (+20%) * (x2) (4K)
+
+$breakpoints: (
+    "xxs":  20em,   // 320 px
+    "xs":   30em,   // 480 px
+    "sm":   48em,   // 768 px
+    "md":   60em,   // 960 px
+    "lg":   75em,   // 1200 px
+    "xl":   100em,  // 1440 px
+) !default;
+
+// The breakpoint at which starts the desktop layout
+$bp-expanded: "md" !default;
+// The breakpoint at which the desktop menu is shown
+$bp-expanded-menu: "md" !default;
+// The breakpoint at which the desktop menu is shown
+$bp-expanded-container: "md" !default;
+
+// GRID
+
+$generate-grid-classes: true !default;
+
+$n-children-max: 12 !default; // Max number of columns
+
+// CONTAINERS
+
+$generate-containers-classes: true !default;
+
+// TOOLS
+
+$generate-tools-padding-classes: true !default;
+$generate-tools-margin-classes: true !default;
+$generate-tools-text-classes: true !default;
+
+////////////////////////////////////////////////////////////////////////////////
+// COLORS
+
+$generate-color-classes: true;
+
+// COLOR PALETTE
+
+// Base palette
+$color-primary: #61c5e8 !default;
+$color-secondary: #ed6f30 !default;
+$color-accent: #80bc49 !default;
+$color-gray: #888 !default;
+
+// Shading factors
+$color-variation-ratio-less: 25% !default;
+$color-variation-ratio-base: 50% !default;
+$color-variation-ratio-more: 75% !default;
+$color-variation-ratio-most: 90% !default;
+
+// "Universal" colors
+$color-error: #dc3545 !default;
+$color-warning: #ffc107 !default;
+$color-info: #17a2b8 !default;
+$color-success: #28a745 !default;
+
+// [Early core module @import]
+// This allows to use the computed color variables in the following code
+@import "lib/base/colors";
+
+// ELEMENTS COLORS
+
+// Body
+$body-color-base: $color-gray-darker !default;
+$body-bg-color-base: white !default;
+
+// Links
+$link-color: $color-secondary !default;
+$link-color-active: $color-secondary-darker !default;
+
+////////////////////////////////////////////////////////////////////////////////
+// TYPOGRAPHY
+
+// BASE
+
+// Font family
+$font-family-sans-serif: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: "Lora", Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+$font-family-base: $font-family-sans-serif !default;
+
+// Font size
+$font-size-base: 1.6rem !default;
+
+$font-size-smaller: (floor($font-size-base * 0.75 * 10) * 0.1) !default;
+$font-size-small: (floor($font-size-base * 0.9 * 10) * 0.1) !default;
+$font-size-big: (floor($font-size-base * 1.25 * 10) * 0.1) !default;
+$font-size-bigger: (floor($font-size-base * 1.5 * 10) * 0.1) !default;
+$font-size-biggest: (floor($font-size-base * 2 * 10) * 0.1) !default;
+$font-size-large: (floor($font-size-base * 2.5 * 10) * 0.1) !default;
+$font-size-larger: (floor($font-size-base * 3 * 10) * 0.1) !default;
+$font-size-largest: (floor($font-size-base * 4 * 10) * 0.1) !default;
+
+// Line height
+$line-height-base: 1.5 !default;
+$line-height-small: 1.25 !default;
+$line-height-smaller: 1.125 !default;
+$line-height-smallest: 1 !default;
+
+// Font weight
+$font-weight-light: 300 !default;
+$font-weight-normal: normal !default; // 500
+$font-weight-semibold: 500 !default;
+$font-weight-bold: 700 !default;
+
+// GLOBAL ZOOM
+
+// Pixel per rem, for each breakpoints
+// Aka "global zoom"
+$breakpoints-pixels-per-rem: (
+    "xxs": 9,
+    "xs": 10,
+    "sm": 10,
+    "md": 10,
+    "lg": 11,
+    "xl": 12,
+) !default;
+
+$use-global-zoom: false !default;
+
+// HEADINGS
+
+$generate-headings-classes: true !default;
+
+$headings: (
+    "default": (
+        "font-size": $font-size-base,
+        "font-weight": $font-weight-bold,
+        "font-family": $font-family-sans-serif,
+        "text-transform": none,
+        "line-height": $line-height-small,
+        "margin-bottom": $gutter-half,
+    ),
+    "h1": (
+        "font-size": $font-size-large,
+        "font-weight": $font-weight-semibold,
+        "line-height": $line-height-smallest,
+        "margin-bottom": $gutter-and-half,
+    ),
+    "h2": (
+        "font-size": $font-size-biggest,
+        "font-weight": $font-weight-light,
+        "line-height": $line-height-smaller,
+        "margin-bottom": $gutter,
+        "text-transform": uppercase,
+    ),
+    "h3": (
+        "font-size": $font-size-bigger,
+        "font-weight": $font-weight-semibold,
+        "line-height": $line-height-smaller,
+    ),
+    "h4": (
+        "font-size": $font-size-big,
+        "font-weight": $font-weight-normal,
+    ),
+    "h6": (
+        "font-size": $font-size-small,
+        "font-weight": $font-weight-normal,
+    )
+) !default;
+
+// Border radius
+$border-radius-base: 4px !default;
+
+// FORMS
+
+$input-bg: $body-bg-color-base !default;
+$input-color: $body-color-base !default;
+$input-color-placeholder: $color-gray !default;
+
+$input-border-color: $color-gray-light !default;
+$input-border-focus: $color-gray-dark !default;
+$input-border-radius: $border-radius-base !default;
+$input-height-base: 4.0rem !default;
+
+$input-size-radiobox: 1.4rem !default;
+$input-size-radiobox-inner: 0.8rem !default;
+$input-color-radiobox-inner: $color-secondary !default;
+
+$input-width-gutter-label-inline: $gutter-half !default;
+$input-width-gutter-label-radiobox: $gutter-quarter !default; // Between checkbox/radio and their labels
+$input-width-gutter-block-inline: $gutter !default;
+$input-width-gutter-btn-inline: $gutter-quarter !default;
+
+$input-focus-color: $body-color-base !default;
+$input-focus-outline-width: 2px !default;
+$input-focus-outline-offset: 2px !default;
+
+// ICONS
+
+$generate-icons-classes: true !default;
+
+$icon-sizes: (
+    "xs": $font-size-smaller,
+    "sm": $font-size-small,
+    "md": $font-size-base,
+    "lg": $font-size-big,
+    "xl": $font-size-bigger,
+    "xxl": $font-size-biggest,
+) !default;
+
+// BUTTONS
+
+$generate-buttons-classes: true !default;
+
+$btn-padding: 1.2rem; // Magic value!
+
+$btn-font-weight: $font-weight-semibold !default;
+$btn-text-transform: uppercase !default;
+$btn-border-radius: $border-radius-base !default;
+
+$btn-border-size-hollow: 2px !default;
+$btn-shadow-active: 0 !default; // Refers to @mixing shadow() parameter (from 0 to 5)
+$btn-color-active: true !default; // Darker background on hover and focus
+
+// CODE
+
+$code-border-radius: $border-radius-base !default;
+
+// Z-INDEX
+
+$z-index-sticky: 10000;
+$z-index-panel: 20000;
+$z-index-overlay: 30000;
+$z-index-modal: 40000;
+$z-index-debug: 100000;
+
+// HEADER AND FOOTER
+
+// Header
+$pre-header-v-padding: $gutter-eighth !default;
+$pre-header-bg-color: $color-gray-darker !default;
+$pre-header-color: white !default;
+
+$header-v-padding: $gutter-half !default;
+$header-bg-color: $color-gray-darker !default;
+$header-color: white !default;
+
+$post-header-v-padding: $gutter-eighth !default;
+$post-header-bg-color: $color-gray-lightest !default;
+$post-header-color: $color-gray-dark !default;
+
+// Footer
+$pre-footer-v-padding: $gutter-eighth !default;
+$pre-footer-bg-color: $color-gray-lightest !default;
+$pre-footer-color: $color-gray-dark !default;
+
+$footer-v-padding: $gutter !default;
+$footer-bg-color: $color-gray-darker !default;
+$footer-color: white !default;
+
+$post-footer-v-padding: $gutter !default;
+$post-footer-bg-color: $color-gray-darker !default;
+$post-footer-color: white !default;
+
+// LOGOS
+
+$generate-logos-classes: true !default;
+
+$height-logo-mobile: 3.2rem;
+$height-logo-tablet: 4.0rem;
+$height-logo-desktop: 7.6rem;
+
+$bp-logo-tablet: 'xs';
+$bp-logo-desktop: 'md';
+
+// MENUS
+
+$generate-menus-classes: true !default;
+
+// NAVBAR
+
+$generate-navbars-classes: true !default;
+
+// OVERLAY
+
+$generate-overlay-classes: true !default;
+
+// MODALS
+
+$generate-modals-classes: true !default;
+
+// SHADOWS
+
+$generate-shadow-classes: true !default;
+
+// CAPPED WIDTH
+
+$generate-capped-width-classes: true !default;
+
+// CUSTOM SCROLLBARS
+
+$generate-custom-scrollbars-classes: true !default;
+
+$custom-scrollbar-size: $gutter-quarter !default;
+$custom-scrollbar-track-color: $color-gray-lighter !default;
+$custom-scrollbar-thumb-color: $color-secondary !default;
+$custom-scrollbar-border-radius: math.div($custom-scrollbar-size, 2) !default;
+
+// DEBUG
+
+$debug-zone-background: rgba(0, 0, 0, 0.75);
+$debug-zone-text-color: chartreuse;
