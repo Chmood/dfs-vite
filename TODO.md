@@ -3,6 +3,7 @@
 ## Bugs
 
 - tiny slider 6/5 slides bug [TODO]
+- fix indentation (2 spaces everywhere)
 
 ## Features
 
