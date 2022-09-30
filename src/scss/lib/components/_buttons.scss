@@ -398,7 +398,7 @@ input[type="button"] {
     .btn-hollow {
         background-color: transparent;
         border: $btn-border-size-hollow solid;
-        padding: calc(#{$btn-padding} - #{$btn-border-size-hollow } * 2); // Magic value!
+        padding: calc(#{$btn-padding} - #{$btn-border-size-hollow });
 
         &:not(:disabled) {
             @include hocus() {
